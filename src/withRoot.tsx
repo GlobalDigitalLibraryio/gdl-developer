@@ -7,42 +7,40 @@ import getPageContext from './getPageContext';
 type Props = {};
 
 function withRoot(Component: React.ComponentType<{}>) {
-    class WithRoot extends React.Component<Props> {
-        constructor(props: Props) {
-            super(props);
-            this.muiPageContext = getPageContext();
-        }
-
-        muiPageContext: any = null;
-
-        componentDidMount() {
-            // Remove the server-side injected CSS.
-            const jssStyles = document.querySelector('#jss-server-side');
-            if (jssStyles && jssStyles.parentNode) {
-                jssStyles.parentNode.removeChild(jssStyles);
-            }
-        }
-
-        render() {
-            return (
-                <JssProvider
-                    generateClassName={this.muiPageContext.generateClassName}
-                >
-                    {/* Make the theme available down the React tree. */}
-                    <MuiThemeProvider
-                        theme={this.muiPageContext.theme}
-                        sheetsManager={this.muiPageContext.sheetsManager}
-                    >
-                        {/* Kickstart a simple baseline to build upon. */}
-                        <CssBaseline />
-                        <Component {...this.props} />
-                    </MuiThemeProvider>
-                </JssProvider>
-            );
-        }
+  class WithRoot extends React.Component<Props> {
+    constructor(props: Props) {
+      super(props);
+      this.muiPageContext = getPageContext();
     }
 
-    return WithRoot;
+    muiPageContext: any = null;
+
+    componentDidMount() {
+      // Remove the server-side injected CSS.
+      const jssStyles = document.querySelector('#jss-server-side');
+      if (jssStyles && jssStyles.parentNode) {
+        jssStyles.parentNode.removeChild(jssStyles);
+      }
+    }
+
+    render() {
+      return (
+        <JssProvider generateClassName={this.muiPageContext.generateClassName}>
+          {/* Make the theme available down the React tree. */}
+          <MuiThemeProvider
+            theme={this.muiPageContext.theme}
+            sheetsManager={this.muiPageContext.sheetsManager}
+          >
+            {/* Kickstart a simple baseline to build upon. */}
+            <CssBaseline />
+            <Component {...this.props} />
+          </MuiThemeProvider>
+        </JssProvider>
+      );
+    }
+  }
+
+  return WithRoot;
 }
 
 export default withRoot;

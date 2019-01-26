@@ -5,21 +5,21 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from 'gatsby';
 
 const Header = ({ siteTitle }: { siteTitle: String }) => (
-    <AppBar position="static">
-        <Toolbar>
-            <Typography variant="h6" color="inherit">
-                <Link
-                    to="/"
-                    style={{
-                        color: 'white',
-                        textDecoration: 'none'
-                    }}
-                >
-                    {siteTitle}
-                </Link>
-            </Typography>
-        </Toolbar>
-    </AppBar>
+  <AppBar position="static">
+    <Toolbar>
+      <Typography variant="h6" color="inherit">
+        <Link
+          to="/"
+          style={{
+            color: 'white',
+            textDecoration: 'none'
+          }}
+        >
+          {siteTitle}
+        </Link>
+      </Typography>
+    </Toolbar>
+  </AppBar>
 );
 
 export default Header;

@@ -1,32 +1,32 @@
 {
-    "name": "gdl-developer",
-    "description": "A developer portal for GDL",
-    "license": "GPL-3.0",
-    "author": "gdl@knowit.no",
-    "scripts": {
-        "dev": "gatsby develop",
-        "format": "prettier --write '*.js' 'src/**/*.js'",
-        "build": "gatsby build",
-        "start": "gatsby serve"
-    },
-    "dependencies": {
-        "@material-ui/core": "^3.9.0",
-        "@material-ui/icons": "^3.0.2",
-        "core-js": "2.6.3",
-        "gatsby": "2.0.97",
-        "gatsby-plugin-manifest": "2.0.13",
-        "gatsby-plugin-offline": "2.0.21",
-        "gatsby-plugin-react-helmet": "3.0.5",
-        "gatsby-plugin-typescript": "^2.0.3",
-        "jss": "9.8.7",
-        "react": "16.7.0",
-        "react-dom": "16.7.0",
-        "react-helmet": "5.2.0",
-        "react-jss": "8.6.1",
-        "swagger-ui": "^3.20.5"
-    },
-    "devDependencies": {
-        "@types/react-helmet": "^5.0.8",
-        "prettier": "1.16.1"
-    }
+  "name": "gdl-developer",
+  "description": "A developer portal for GDL",
+  "license": "GPL-3.0",
+  "author": "gdl@knowit.no",
+  "scripts": {
+    "dev": "gatsby develop",
+    "format": "prettier --write '*.js' 'src/**/*.js'",
+    "build": "gatsby build",
+    "start": "gatsby serve"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.9.0",
+    "@material-ui/icons": "^3.0.2",
+    "core-js": "2.6.3",
+    "gatsby": "2.0.97",
+    "gatsby-plugin-manifest": "2.0.13",
+    "gatsby-plugin-offline": "2.0.21",
+    "gatsby-plugin-react-helmet": "3.0.5",
+    "gatsby-plugin-typescript": "^2.0.3",
+    "jss": "9.8.7",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-helmet": "5.2.0",
+    "react-jss": "8.6.1",
+    "swagger-ui": "^3.20.5"
+  },
+  "devDependencies": {
+    "@types/react-helmet": "^5.0.8",
+    "prettier": "1.16.1"
+  }
 }
