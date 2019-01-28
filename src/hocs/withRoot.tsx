@@ -2,11 +2,13 @@ import * as React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
-import getPageContext from './getPageContext';
+import getPageContext from '../getPageContext';
 
-type Props = {};
+type Props = {
+  data: any;
+};
 
-function withRoot(Component: React.ComponentType<{}>) {
+function withRoot(Component: React.ComponentType<{ data: any }>) {
   class WithRoot extends React.Component<Props> {
     constructor(props: Props) {
       super(props);

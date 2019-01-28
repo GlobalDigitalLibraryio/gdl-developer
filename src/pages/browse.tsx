@@ -1,7 +1,7 @@
 import React from 'react';
 import SwaggerUI from '../components/SwaggerUI';
 import Layout from '../components/Layout';
-import withRoot from '../withRoot';
+import withRoot from '../hocs/withRoot';
 
 const BrowsePage = () => (
   <Layout>

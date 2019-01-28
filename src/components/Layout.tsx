@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Theme } from '@material-ui/core';
 import { StaticQuery, graphql } from 'gatsby';
@@ -18,7 +18,13 @@ const styles = (theme: Theme) => ({
   }
 });
 
-const Layout = ({ children, classes }) => (
+const Layout = ({
+  children,
+  classes
+}: {
+  children: ReactNode;
+  classes: any;
+}) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -34,8 +40,8 @@ const Layout = ({ children, classes }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' }
+            { name: 'description', content: 'A developer portal for GDL' },
+            { name: 'keywords', content: 'Developer, portal, gdl' }
           ]}
         >
           <html lang="en" />

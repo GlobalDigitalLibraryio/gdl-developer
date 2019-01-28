@@ -5,6 +5,22 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      }
+    },
+    // Expose the file system to Gatsby's GrapQL API
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/markdowns`,
+        name: 'pages'
+      }
+    },
+    // Handle our static markdown files
+    'gatsby-transformer-remark',
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'gatsby-starter-material-ui',
@@ -13,7 +29,7 @@ module.exports = {
         background_color: '#0277bd',
         theme_color: '#0277bd',
         display: 'minimal-ui',
-        icon: 'src/images/favicon.png' // This path is relative to the root of the site.
+        icon: 'src/assets/favicon.png' // This path is relative to the root of the site.
       }
     },
     'gatsby-plugin-offline',
