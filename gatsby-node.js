@@ -5,6 +5,22 @@
  */
 const path = require('path');
 
+// https://www.gatsbyjs.org/docs/debugging-html-builds/#fixing-third-party-modules
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /swagger-ui/,
+            use: loaders.null()
+          }
+        ]
+      }
+    });
+  }
+};
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
