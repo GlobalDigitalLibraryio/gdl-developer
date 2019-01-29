@@ -4,6 +4,10 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-remark-images',
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
@@ -19,7 +23,17 @@ module.exports = {
       }
     },
     // Handle our static markdown files
-    'gatsby-transformer-remark',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {}
+          }
+        ]
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

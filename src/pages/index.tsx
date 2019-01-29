@@ -51,6 +51,11 @@ const IndexPage = ({ data }: { data: any }) => {
         <Link to="/browse">
           <Typography variant="h6">Browse API</Typography>
         </Link>
+        <Link to="/example">
+          <Typography style={{ marginTop: 20 }} variant="h6">
+            example
+          </Typography>
+        </Link>
       </Section>
     </Layout>
   );
