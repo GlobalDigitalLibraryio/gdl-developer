@@ -9,7 +9,7 @@ const BrowsePage = () => (
     <Card style={{ padding: 50 }}>
       <List>
         <ListItem>
-          <Typography variant="h6">List of available API</Typography>
+          <Typography variant="h6">Available</Typography>
         </ListItem>
         <ListItem>
           <Link to="/book-api">
