@@ -4,26 +4,23 @@ import SwaggerUi, { presets } from 'swagger-ui';
 import 'swagger-ui/dist/swagger-ui.css';
 
 type Props = {
+  domId: string;
   url: string;
   spec?: Object;
 };
 
 // TODO: create a typescript class, currently global typed in custom.d.ts
 class SwaggerUI extends Component<Props> {
-  static defaultProps = {
-    url: 'https://api.test.digitallibrary.io/book-api/api-docs'
-  };
-
   componentDidMount() {
     SwaggerUi({
-      dom_id: '#swaggerContainer',
+      dom_id: `#${this.props.domId}`,
       url: this.props.url,
       presets: [presets.apis]
     });
   }
 
   render() {
-    return <div id="swaggerContainer" />;
+    return <div id={this.props.domId} />;
   }
 }
 

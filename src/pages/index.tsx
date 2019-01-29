@@ -9,7 +9,7 @@ import cogs from '../assets/cogs.svg';
 import Layout from '../components/Layout';
 import withRoot from '../hocs/withRoot';
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data }: { data: any }) => {
   const {
     markdownRemark: {
       frontmatter: { title, subtitle }
@@ -68,7 +68,6 @@ const styles = {
     align-items: center;
     justify-content: center;
     height: 400px;
-    margin: 50px;
     background-color: #0277bd;
   `
 };
@@ -78,7 +77,7 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 40px;
 `;
 
 export const pageQuery = graphql`

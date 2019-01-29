@@ -8,6 +8,7 @@ import Header from './Header';
 
 const styles = (theme: Theme) => ({
   root: {
+    margin: 50,
     paddingTop: theme.spacing.unit * 2,
     paddingLeft: theme.spacing.unit * 2,
     paddingRight: theme.spacing.unit * 2,
