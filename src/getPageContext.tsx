@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle...*/
 
-import { SheetsRegistry } from 'jss';
+import { SheetsRegistry } from 'react-jss';
 import {
   createMuiTheme,
   createGenerateClassName

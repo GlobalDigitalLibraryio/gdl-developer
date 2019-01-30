@@ -1,47 +1,46 @@
-const React = require('react');
-const { renderToString } = require('react-dom/server');
-const JssProvider = require('react-jss/lib/JssProvider').default;
-const getPageContext = require('./src/getPageContext').default;
-const { extractCritical } = require('emotion-server');
+import React from 'react';
+import { JssProvider } from 'react-jss';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import { CssBaseline } from '@material-ui/core';
 
-function replaceRenderer({
-  bodyComponent,
-  replaceBodyHTMLString,
-  setHeadComponents
-}) {
-  // Get the context of the page to collect side effects
-  const muiPageContext = getPageContext();
+import getPageContext from './src/getPageContext';
 
-  const bodyHTML = renderToString(
-    <JssProvider registry={muiPageContext.sheetsRegistry}>
-      {bodyComponent}
+const muiPageContext = getPageContext();
+
+const sheetsRegistryMap = muiPageContext.sheetsManager;
+
+export const wrapRootElement = ({ element }) => {
+  return (
+    <JssProvider
+      registry={muiPageContext.sheetsRegistry}
+      generateClassName={muiPageContext.generateClassName}
+    >
+      <MuiThemeProvider
+        theme={muiPageContext.theme}
+        sheetsManager={sheetsRegistryMap}
+      >
+        <CssBaseline />
+        {element}
+      </MuiThemeProvider>
     </JssProvider>
   );
+};
 
-  // SSR our CSS in JS styles (Emotion and JSS)
-  const { html, ids, css } = extractCritical(bodyHTML);
-
-  replaceBodyHTMLString(html);
-
-  replaceBodyHTMLString(bodyHTML);
+export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
+    <link
+      key="font-roboto-stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+    />,
+    // Material UI
     <style
       type="text/css"
-      id="jss-server-side"
-      key="jss-server-side"
+      id="server-side-jss"
+      key="server-side-jss"
       dangerouslySetInnerHTML={{
         __html: muiPageContext.sheetsRegistry.toString()
       }}
-    />,
-    // Emotion
-    <style key="emotion-css" dangerouslySetInnerHTML={{ __html: css }} />,
-    <script
-      key="emotion-ids-html"
-      dangerouslySetInnerHTML={{
-        __html: `window.__EMOTION_CRITICAL_CSS_IDS__ = ${JSON.stringify(ids)};`
-      }}
     />
   ]);
-}
-
-exports.replaceRenderer = replaceRenderer;
+};

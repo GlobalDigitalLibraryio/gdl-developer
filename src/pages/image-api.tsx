@@ -1,7 +1,6 @@
 import React from 'react';
 import SwaggerUI from '../components/SwaggerUI';
 import Layout from '../components/Layout';
-import withRoot from '../hocs/withRoot';
 
 const ImageApiPage = () => (
   <Layout>
@@ -12,4 +11,4 @@ const ImageApiPage = () => (
   </Layout>
 );
 
-export default withRoot(ImageApiPage);
+export default ImageApiPage;

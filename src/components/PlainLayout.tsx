@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from './Layout';
-import withRoot from '../hocs/withRoot';
 import { Typography } from '@material-ui/core';
 
 const PlainLayout = ({ data }) => (
@@ -34,4 +33,4 @@ export const query = graphql`
   }
 `;
 
-export default withRoot(PlainLayout);
+export default PlainLayout;

@@ -1,20 +1,47 @@
-require('./src/styles/styles.css');
+import React from 'react';
+import JssProvider from 'react-jss/lib/JssProvider';
+import getPageContext from './src/getPageContext';
+import { MuiThemeProvider, jssPreset } from '@material-ui/core/styles';
+import { CssBaseline } from '@material-ui/core';
+import { create } from 'jss';
+
+import './src/styles/styles.css';
+
+const jss = create({
+  ...jssPreset(),
+  // We define a custom insertion point that JSS will look for injecting the styles in the DOM.
+  insertionPoint: 'jss-insertion-point'
+});
+
+const muiPageContext = getPageContext();
 
 // onClientEntry() must be included for the requires above to be triggered,
 // even if it is empty!
-exports.onClientEntry = () => {
-  // Load Roboto font to support Material Design
-  const pathRoboto =
-    'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
-  const linkRoboto = document.createElement('link');
-  linkRoboto.setAttribute('rel', 'stylesheet');
-  linkRoboto.setAttribute('href', pathRoboto);
-  document.head.appendChild(linkRoboto);
-
+export function onClientEntry() {
   // Load Material Icons
   const pathIcons = 'https://fonts.googleapis.com/icon?family=Material+Icons';
   const linkIcons = document.createElement('link');
   linkIcons.setAttribute('rel', 'stylesheet');
   linkIcons.setAttribute('href', pathIcons);
   document.head.appendChild(linkIcons);
-};
+
+  const styleNode = window.document.createComment('jss-insertion-point');
+  window.document.head.insertBefore(styleNode, window.document.head.firstChild);
+}
+
+// Remove the server-side injected CSS.
+export function onInitialClientRender() {
+  const ssStyles = window.document.getElementById('server-side-jss');
+  ssStyles && ssStyles.parentNode.removeChild(ssStyles);
+}
+
+export function wrapPageElement({ element }) {
+  return (
+    <JssProvider jss={jss} generateClassName={muiPageContext.generateClassName}>
+      <MuiThemeProvider theme={muiPageContext.theme}>
+        <CssBaseline />
+        {element}
+      </MuiThemeProvider>
+    </JssProvider>
+  );
+}

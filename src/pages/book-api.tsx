@@ -1,7 +1,6 @@
 import React from 'react';
 import SwaggerUI from '../components/SwaggerUI';
 import Layout from '../components/Layout';
-import withRoot from '../hocs/withRoot';
 
 const BookApiPage = () => (
   <Layout>
@@ -12,4 +11,4 @@ const BookApiPage = () => (
   </Layout>
 );
 
-export default withRoot(BookApiPage);
+export default BookApiPage;

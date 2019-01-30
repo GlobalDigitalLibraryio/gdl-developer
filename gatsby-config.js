@@ -37,7 +37,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-material-ui',
+        name: 'GDL developer portal',
         short_name: 'developer-portal',
         start_url: '/',
         background_color: '#0277bd',

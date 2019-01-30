@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, List, ListItem, Typography } from '@material-ui/core';
 import { Link } from 'gatsby';
 import Layout from '../components/Layout';
-import withRoot from '../hocs/withRoot';
 
 const BrowsePage = () => (
   <Layout>
@@ -26,4 +25,4 @@ const BrowsePage = () => (
   </Layout>
 );
 
-export default withRoot(BrowsePage);
+export default BrowsePage;
