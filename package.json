@@ -7,7 +7,8 @@
     "dev": "gatsby develop",
     "format": "prettier --write '*.js' 'src/**/*.js'",
     "build": "gatsby build",
-    "start": "gatsby serve"
+    "start": "gatsby serve",
+    "deploy": "gatsby build && s3-deploy './public/**' --cwd './public/' --bucket ${GDL_DEVELOPER_BUCKET} --deleteRemoved --distId ${GDL_DEVELOPER_CLOUD_DIST_ID} --invalidate '/*'"
   },
   "dependencies": {
     "@emotion/core": "10.0.6",
@@ -36,6 +37,7 @@
     "react-dom": "16.7.0",
     "react-helmet": "5.2.0",
     "react-jss": "8.6.1",
+    "s3-deploy": "^1.2.1",
     "swagger-ui": "^3.20.5"
   },
   "devDependencies": {
