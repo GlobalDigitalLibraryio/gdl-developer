@@ -7,3 +7,5 @@ title: Global Digital Library
 [Browse APIs](/browse)
 
 [Example](/example)
+
+[Feeds](/feeds)
