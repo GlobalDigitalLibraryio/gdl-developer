@@ -8,4 +8,4 @@ title: Global Digital Library
 
 [Example](/example)
 
-[Content Guidelines](/example)
+[Content Guidelines](/guidlines)
