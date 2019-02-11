@@ -6,6 +6,7 @@ import { CssBaseline } from '@material-ui/core';
 import { create } from 'jss';
 import normalizeCSS from '!raw-loader!normalize.css';
 import './src/styles/styles.css';
+import 'prismjs/themes/prism.css';
 
 const jss = create({
   ...jssPreset(),
