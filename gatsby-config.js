@@ -1,6 +1,35 @@
+// https://www.gatsbyjs.org/docs/environment-variables/#additional-environments-staging-test-etc
+const GDL_ENVIRONMENT = process.env.GDL_ENVIRONMENT || 'dev';
+
+const bookApiDocs = () => {
+  switch (GDL_ENVIRONMENT) {
+    case 'dev':
+      return 'https://api.test.digitallibrary.io/book-api/api-docs';
+    case 'prod':
+      return 'https://api.digitallibrary.io/book-api/api-docs';
+    default:
+      return `https://api.${GDL_ENVIRONMENT}.digitallibrary.io/book-api/api-docs`;
+  }
+};
+
+const imageApiDocs = () => {
+  switch (GDL_ENVIRONMENT) {
+    case 'dev':
+      return 'https://api.test.digitallibrary.io/image-api/api-docs';
+    case 'prod':
+      return 'https://api.digitallibrary.io/image-api/api-docs';
+    default:
+      return `https://api.${GDL_ENVIRONMENT}.digitallibrary.io/image-api/api-docs`;
+  }
+};
+
+console.log(`Using environment config: '${GDL_ENVIRONMENT}'`);
+
 module.exports = {
   siteMetadata: {
-    title: 'GDL developer portal'
+    title: 'GDL developer portal',
+    bookApiDocs: bookApiDocs(),
+    imageApiDocs: imageApiDocs()
   },
   plugins: [
     'gatsby-plugin-react-helmet',

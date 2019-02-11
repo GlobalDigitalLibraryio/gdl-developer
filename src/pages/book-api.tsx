@@ -1,14 +1,28 @@
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import SwaggerUI from '../components/SwaggerUI';
 import Layout from '../components/Layout';
 
 const BookApiPage = () => (
-  <Layout>
-    <SwaggerUI
-      domId="swagger-book-api"
-      url="https://api.test.digitallibrary.io/book-api/api-docs"
-    />
-  </Layout>
+  <StaticQuery
+    query={graphql`
+      query BookApiQuery {
+        site {
+          siteMetadata {
+            bookApiDocs
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Layout>
+        <SwaggerUI
+          domId="swagger-book-api"
+          url={data.site.siteMetadata.bookApiDocs}
+        />
+      </Layout>
+    )}
+  />
 );
 
 export default BookApiPage;
