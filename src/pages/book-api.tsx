@@ -9,6 +9,7 @@ const BookApiPage = () => (
       query BookApiQuery {
         site {
           siteMetadata {
+            oauthId
             bookApiDocs
           }
         }
@@ -18,6 +19,7 @@ const BookApiPage = () => (
       <Layout>
         <SwaggerUI
           domId="swagger-book-api"
+          clientId={data.site.siteMetadata.oauthId}
           url={data.site.siteMetadata.bookApiDocs}
         />
       </Layout>

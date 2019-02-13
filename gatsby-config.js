@@ -1,25 +1,15 @@
 // https://www.gatsbyjs.org/docs/environment-variables/#additional-environments-staging-test-etc
 const GDL_ENVIRONMENT = process.env.GDL_ENVIRONMENT || 'dev';
+const GDL_AUTH_CLIENT_ID = process.env.GDL_AUTH_CLIENT_ID || '';
 
-const bookApiDocs = () => {
+const apiDocs = apiName => {
   switch (GDL_ENVIRONMENT) {
     case 'dev':
-      return 'https://api.test.digitallibrary.io/book-api/api-docs';
+      return `https://api.test.digitallibrary.io/${apiName}/api-docs`;
     case 'prod':
-      return 'https://api.digitallibrary.io/book-api/api-docs';
+      return `https://api.digitallibrary.io/${apiName}/api-docs`;
     default:
-      return `https://api.${GDL_ENVIRONMENT}.digitallibrary.io/book-api/api-docs`;
-  }
-};
-
-const imageApiDocs = () => {
-  switch (GDL_ENVIRONMENT) {
-    case 'dev':
-      return 'https://api.test.digitallibrary.io/image-api/api-docs';
-    case 'prod':
-      return 'https://api.digitallibrary.io/image-api/api-docs';
-    default:
-      return `https://api.${GDL_ENVIRONMENT}.digitallibrary.io/image-api/api-docs`;
+      return `https://api.${GDL_ENVIRONMENT}.digitallibrary.io/${apiName}/api-docs`;
   }
 };
 
@@ -28,8 +18,9 @@ console.log(`Using environment config: '${GDL_ENVIRONMENT}'`);
 module.exports = {
   siteMetadata: {
     title: 'GDL developer portal',
-    bookApiDocs: bookApiDocs(),
-    imageApiDocs: imageApiDocs()
+    bookApiDocs: apiDocs('book-api'),
+    imageApiDocs: apiDocs('image-api'),
+    oauthId: GDL_AUTH_CLIENT_ID
   },
   plugins: [
     'gatsby-plugin-react-helmet',

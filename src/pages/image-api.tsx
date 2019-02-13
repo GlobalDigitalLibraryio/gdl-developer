@@ -10,6 +10,7 @@ const ImageApiPage = () => (
       query ImageApiQuery {
         site {
           siteMetadata {
+            oauthId
             imageApiDocs
           }
         }
@@ -19,6 +20,7 @@ const ImageApiPage = () => (
       <Layout>
         <SwaggerUI
           domId="swagger-image-api"
+          clientId={data.site.siteMetadata.oauthId}
           url={data.site.siteMetadata.imageApiDocs}
         />
       </Layout>
