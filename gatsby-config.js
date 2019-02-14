@@ -1,17 +1,9 @@
-// https://www.gatsbyjs.org/docs/environment-variables/#additional-environments-staging-test-etc
-const GDL_ENVIRONMENT = process.env.GDL_ENVIRONMENT || 'dev';
-const GDL_AUTH_CLIENT_ID = process.env.GDL_AUTH_CLIENT_ID || '';
-
-const apiDocs = apiName => {
-  switch (GDL_ENVIRONMENT) {
-    case 'dev':
-      return `https://api.test.digitallibrary.io/${apiName}/api-docs`;
-    case 'prod':
-      return `https://api.digitallibrary.io/${apiName}/api-docs`;
-    default:
-      return `https://api.${GDL_ENVIRONMENT}.digitallibrary.io/${apiName}/api-docs`;
-  }
-};
+const {
+  GDL_AUTH_CLIENT_ID,
+  GDL_ENVIRONMENT,
+  apiDocs,
+  oauthRedirectUrl
+} = require('./config');
 
 console.log(`Using environment config: '${GDL_ENVIRONMENT}'`);
 
@@ -20,7 +12,8 @@ module.exports = {
     title: 'GDL developer portal',
     bookApiDocs: apiDocs('book-api'),
     imageApiDocs: apiDocs('image-api'),
-    oauthId: GDL_AUTH_CLIENT_ID
+    oauthId: GDL_AUTH_CLIENT_ID,
+    oauthRedirectUrl: oauthRedirectUrl()
   },
   plugins: [
     'gatsby-plugin-react-helmet',

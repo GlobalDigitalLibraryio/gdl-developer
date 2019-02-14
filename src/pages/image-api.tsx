@@ -12,6 +12,7 @@ const ImageApiPage = () => (
           siteMetadata {
             oauthId
             imageApiDocs
+            oauthRedirectUrl
           }
         }
       }
@@ -20,6 +21,7 @@ const ImageApiPage = () => (
       <Layout>
         <SwaggerUI
           domId="swagger-image-api"
+          redirectUrl={data.site.siteMetadata.oauthRedirectUrl}
           clientId={data.site.siteMetadata.oauthId}
           url={data.site.siteMetadata.imageApiDocs}
         />

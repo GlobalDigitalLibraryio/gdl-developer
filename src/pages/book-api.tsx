@@ -11,6 +11,7 @@ const BookApiPage = () => (
           siteMetadata {
             oauthId
             bookApiDocs
+            oauthRedirectUrl
           }
         }
       }
@@ -19,6 +20,7 @@ const BookApiPage = () => (
       <Layout>
         <SwaggerUI
           domId="swagger-book-api"
+          redirectUrl={data.site.siteMetadata.oauthRedirectUrl}
           clientId={data.site.siteMetadata.oauthId}
           url={data.site.siteMetadata.bookApiDocs}
         />

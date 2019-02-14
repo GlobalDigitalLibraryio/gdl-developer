@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
-
 import SwaggerUi, { presets } from 'swagger-ui';
 import 'swagger-ui/dist/swagger-ui.css';
 
@@ -9,6 +8,7 @@ type Props = {
   url: string;
   spec?: Object;
   clientId: string;
+  redirectUrl: string;
 };
 
 // TODO: create a typescript class, currently global typed in custom.d.ts
@@ -41,6 +41,7 @@ class SwaggerUI extends Component<Props> {
       dom_id: `#${this.props.domId}`,
       url: this.props.url,
       presets: [presets.apis],
+      oauth2RedirectUrl: this.props.redirectUrl,
       onComplete: () => {
         // There is a delay upon initializing Swagger and this callback ensure that it has been loaded to the DOM
         if (this.swaggerRef.current) {
