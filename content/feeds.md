@@ -1,5 +1,5 @@
 ---
-title: 'The GDL OPDS-feed'
+title: 'The Global Digital Library OPDS-feed'
 ---
 
 The Open Publication Distribution System (OPDS) Catalog specification is a syndication format for electronic publications based on Atom (RFC4287) and HTTP (RFC2616). OPDS Catalogs enable the aggregation, distribution, and discovery of books, journals, and other digital content by any user, from any source, in any electronic format, on any device. The OPDS Catalogs specification is based on the Atom syndication format and prioritizes simplicity and speed.
@@ -20,7 +20,7 @@ Facets were introduced in version 1.1 of the OPDS specification and is a common 
 For each language available in the GDL, there will be a facet-link like the following:
 ```xml
 <link rel=”http://opds-spec.org/facet” href=”https://opds.digitallibrary.io/v1/am/root.xml” title=”አማርኛ” opds:facetGroup=”Languages” opds:activeFacet=”false”/>
-``` 
+```
 This links to books in the Amharic language.
 
 For each language, facets with the available top-level categories will be listed:
