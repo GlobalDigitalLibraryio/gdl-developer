@@ -45,14 +45,11 @@ function Oauth2Redirect() {
       } else {
         let oauthErrorMsg;
         if (qp.error) {
-          oauthErrorMsg =
-            '[' +
-            qp.error +
-            ']: ' +
-            (qp.error_description
-              ? qp.error_description + '. '
-              : 'no accessCode received from the server. ') +
-            (qp.error_uri ? 'More info: ' + qp.error_uri : '');
+          oauthErrorMsg = `[${qp.error}] ${
+            qp.error_description
+              ? qp.error_description
+              : 'no accessCode received from the server.'
+          } ${qp.error_uri ? `More info: ${qp.error_uri}` : ''}.`;
         }
         oauth2.errCb({
           authId: oauth2.auth.name,

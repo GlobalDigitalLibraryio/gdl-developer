@@ -11,7 +11,6 @@ type Props = {
   redirectUrl: string;
 };
 
-// TODO: create a typescript class, currently global typed in custom.d.ts
 class SwaggerUI extends Component<Props> {
   swaggerRef = React.createRef<HTMLDivElement>();
 
@@ -20,6 +19,8 @@ class SwaggerUI extends Component<Props> {
      * We want to remove/hide the client id for OAuth2 from the user which the Swagger UI doesn't provide
      * A hacky solution is to listen to DOM changes with Mutation observer to know when the modal
      * for authorizing is inserted to the DOM
+     *
+     * https://github.com/swagger-api/swagger-ui/issues/5178
      */
     const mutationObserver = new MutationObserver(mutations => {
       mutations[0].addedNodes.forEach((node: any) => {
