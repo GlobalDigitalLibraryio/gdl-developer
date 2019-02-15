@@ -20,7 +20,6 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-remark-images',
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
@@ -42,7 +41,15 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-images`,
-            options: {}
+            options: {
+              maxWidth: 970
+            }
+          },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              ignoreFileExtensions: []
+            }
           },
           {
             resolve: `gatsby-remark-prismjs`,
