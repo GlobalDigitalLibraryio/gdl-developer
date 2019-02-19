@@ -9,7 +9,7 @@ By taking this open approach to digital development, we hope to help increase co
 
 <section>
 
-![alt text](/images/rose.svg)
+![api image](/images/rose.png)
 
 ## APIs
 
@@ -25,9 +25,9 @@ By taking this open approach to digital development, we hope to help increase co
 
 #### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
 
-[Example](/example)
+[Feeds](/feeds)
 
-![alt text](/images/philly.svg)
+![feed image](/images/philly.png)
 
 </section>
 
@@ -35,16 +35,16 @@ By taking this open approach to digital development, we hope to help increase co
 
 ## Content
 
-![alt text](/images/panic-rosa.svg)
+![content image](/images/panico.png)
 
 #### Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
 
-[Feeds](/feeds)
+[Example](/example)
 
 </section>
 
 <grid>
-<griditem>
+<griditem divider="yes">
 
 ![alt text](/images/github.svg)
 

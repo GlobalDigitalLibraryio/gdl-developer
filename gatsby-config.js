@@ -9,7 +9,7 @@ console.log(`Using environment config: '${GDL_ENVIRONMENT}'`);
 
 module.exports = {
   siteMetadata: {
-    title: 'GDL developer portal',
+    title: 'Developer portal',
     bookApiDocs: apiDocs('book-api'),
     imageApiDocs: apiDocs('image-api'),
     oauthId: GDL_AUTH_CLIENT_ID,
@@ -18,6 +18,14 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        theme: {
+          primaryColor: '#0277bd'
+        }
+      }
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -42,7 +50,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 970
+              maxWidth: 1060,
+              linkImagesToOriginal: false,
+              backgroundColor: 'transparent'
             }
           },
           {

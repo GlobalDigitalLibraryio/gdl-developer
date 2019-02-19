@@ -45,8 +45,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  const plainLayout = path.resolve('src/components/PlainLayout.tsx');
-  const landingLayout = path.resolve('src/components/LandingLayout.tsx');
+  const plainLayout = path.resolve('src/layouts/PlainLayout.tsx');
+  const landingLayout = path.resolve('src/layouts/LandingLayout.tsx');
 
   return graphql(`
     {
