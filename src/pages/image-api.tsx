@@ -1,14 +1,33 @@
 import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+
 import SwaggerUI from '../components/SwaggerUI';
 import Layout from '../components/Layout';
 
 const ImageApiPage = () => (
-  <Layout>
-    <SwaggerUI
-      domId="swagger-image-api"
-      url="https://api.test.digitallibrary.io/image-api/api-docs"
-    />
-  </Layout>
+  <StaticQuery
+    query={graphql`
+      query ImageApiQuery {
+        site {
+          siteMetadata {
+            oauthId
+            imageApiDocs
+            oauthRedirectUrl
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Layout>
+        <SwaggerUI
+          domId="swagger-image-api"
+          redirectUrl={data.site.siteMetadata.oauthRedirectUrl}
+          clientId={data.site.siteMetadata.oauthId}
+          url={data.site.siteMetadata.imageApiDocs}
+        />
+      </Layout>
+    )}
+  />
 );
 
 export default ImageApiPage;

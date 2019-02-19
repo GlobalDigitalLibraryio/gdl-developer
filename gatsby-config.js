@@ -1,6 +1,19 @@
+const {
+  GDL_AUTH_CLIENT_ID,
+  GDL_ENVIRONMENT,
+  apiDocs,
+  oauthRedirectUrl
+} = require('./config');
+
+console.log(`Using environment config: '${GDL_ENVIRONMENT}'`);
+
 module.exports = {
   siteMetadata: {
-    title: 'GDL developer portal'
+    title: 'GDL developer portal',
+    bookApiDocs: apiDocs('book-api'),
+    imageApiDocs: apiDocs('image-api'),
+    oauthId: GDL_AUTH_CLIENT_ID,
+    oauthRedirectUrl: oauthRedirectUrl()
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -4,7 +4,7 @@ import getPageContext from './src/getPageContext';
 import { MuiThemeProvider, jssPreset } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import { create } from 'jss';
-import normalizeCSS from '!raw-loader!normalize.css';
+import '!raw-loader!normalize.css';
 import './src/styles/styles.css';
 import 'prismjs/themes/prism.css';
 
