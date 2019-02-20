@@ -29,8 +29,8 @@ export const wrapRootElement = ({ element }) => {
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
-      key="font-roboto-stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      key="font-lato-stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
       rel="stylesheet"
     />,
     // Material UI

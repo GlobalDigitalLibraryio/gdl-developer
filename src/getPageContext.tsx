@@ -10,6 +10,10 @@ const isBrowser = typeof window !== 'undefined';
 
 // Create a theme with Gatsby brand colors. You can choose your own
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: '"Lato", "Roboto", sans-serif',
+    useNextVariants: true
+  },
   palette: {
     primary: {
       main: '#0277bd'
@@ -18,8 +22,21 @@ const theme = createMuiTheme({
       main: '#ffb238'
     }
   },
-  typography: {
-    useNextVariants: true
+  overrides: {
+    MuiButton: {
+      root: {
+        borderRadius: 18,
+        padding: '13px 30px',
+        minWidth: 125
+      },
+      outlinedPrimary: {
+        fontWeight: 'bold',
+        border: `1.7px solid #0277bd`,
+        '&:hover': {
+          border: `1.7px solid #0277bd`
+        }
+      }
+    }
   }
 });
 

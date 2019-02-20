@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, List, ListItem, Typography } from '@material-ui/core';
 import { Link } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../layouts/Layout';
 
 const BrowsePage = () => (
   <Layout>

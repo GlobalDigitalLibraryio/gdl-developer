@@ -1,23 +1,40 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import { AppBar, Toolbar, Typography, Hidden } from '@material-ui/core';
+import { css } from '@emotion/core';
 import { Link } from 'gatsby';
+import gdlLogo from '../assets/GDL-logo.svg';
+
+const styles = {
+  logo: css`
+    img {
+      margin-top: 2px;
+      height: 36px;
+      width: 100px;
+      margin-left: 15px;
+    }
+  `,
+  center: css`
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    text-align: center;
+  `
+};
 
 const Header = ({ siteTitle }: { siteTitle: String }) => (
   <AppBar position="static">
     <Toolbar>
-      <Typography variant="h6" color="inherit">
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none'
-          }}
-        >
+      <Link to="/" css={styles.logo} aria-label="Global Digital Library">
+        <img src={gdlLogo} aria-hidden alt="logo" />
+      </Link>
+      <Hidden mdDown>
+        <Typography variant="h6" color="inherit" css={styles.center}>
           {siteTitle}
-        </Link>
-      </Typography>
+        </Typography>
+      </Hidden>
     </Toolbar>
   </AppBar>
 );

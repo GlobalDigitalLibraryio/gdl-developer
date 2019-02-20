@@ -45,7 +45,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  const plainLayout = path.resolve('src/components/PlainLayout.tsx');
+  const plainLayout = path.resolve('src/layouts/PlainLayout.tsx');
+  const landingLayout = path.resolve('src/layouts/LandingLayout.tsx');
 
   return graphql(`
     {
@@ -66,7 +67,7 @@ exports.createPages = ({ actions, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
-        component: plainLayout,
+        component: node.fields.slug === '/' ? landingLayout : plainLayout,
         context: {
           slug: node.fields.slug
         } // additional data can be passed via context

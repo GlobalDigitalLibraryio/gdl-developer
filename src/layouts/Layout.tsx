@@ -1,31 +1,10 @@
 import React, { Fragment, ReactNode } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import { Theme } from '@material-ui/core';
 import { StaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
-import Header from './Header';
+import Header from '../components/Header';
 
-const styles = (theme: Theme) => ({
-  root: {
-    margin: 50,
-    paddingTop: theme.spacing.unit * 2,
-    paddingLeft: theme.spacing.unit * 2,
-    paddingRight: theme.spacing.unit * 2,
-    [theme.breakpoints.up('sm')]: {
-      paddingLeft: theme.spacing.unit * 3,
-      paddingRight: theme.spacing.unit * 3
-    }
-  }
-});
-
-const Layout = ({
-  children,
-  classes
-}: {
-  children: ReactNode;
-  classes: any;
-}) => (
+const Layout = ({ children }: { children: ReactNode }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -48,10 +27,10 @@ const Layout = ({
           <html lang="en" />
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div className={classes.root}>{children}</div>
+        {children}
       </Fragment>
     )}
   />
 );
 
-export default withStyles(styles)(Layout);
+export default Layout;

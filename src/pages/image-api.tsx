@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import SwaggerUI from '../components/SwaggerUI';
-import Layout from '../components/Layout';
+import Layout from '../layouts/Layout';
 
 const ImageApiPage = () => (
   <StaticQuery
