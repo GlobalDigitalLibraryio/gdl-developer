@@ -1,53 +1,80 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from './Layout';
-import { Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { Theme } from '@material-ui/core';
+import rehypeReact from 'rehype-react';
 
-const styles = (theme: Theme) => ({
-  root: {
-    margin: 50,
-    paddingTop: theme.spacing.unit * 2,
-    paddingLeft: theme.spacing.unit * 2,
-    paddingRight: theme.spacing.unit * 2,
-    [theme.breakpoints.up('sm')]: {
-      paddingLeft: theme.spacing.unit * 3,
-      paddingRight: theme.spacing.unit * 3
-    }
+import styled from '@emotion/styled';
+
+import { mq, misc } from '../styles';
+
+const Main = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: ${misc.containers.large}px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  flex: 1 0 auto;
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
+
+  div {
+    width: 100%;
   }
-});
+`;
 
-const PlainLayout = ({ data, classes }) => (
-  <Layout>
-    <div className={classes.root}>
-      <div style={{ marginBottom: 20 }}>
-        <Typography variant="h2">
-          {data.markdownRemark.frontmatter.title}
-        </Typography>
-      </div>
-      {data.markdownRemark.frontmatter.image && (
-        <div style={{ width: '60%', marginBottom: 50 }}>
-          <Img
-            fluid={data.markdownRemark.frontmatter.image.childImageSharp.fluid}
-          />
-        </div>
-      )}
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-    </div>
-  </Layout>
-);
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    h1: (props: any) => (
+      <Typography
+        {...props}
+        variant="h4"
+        style={{ color: 'white', marginBottom: 15 }}
+      />
+    ),
+    h2: (props: any) => (
+      <Typography
+        {...props}
+        variant="h5"
+        css={mq({
+          gridArea: 'header',
+          fontSize: '1.7rem',
+          marginLeft: ['auto', 'inherit'],
+          marginRight: ['auto', 'inherit'],
+          marginTop: ['inherit', 'auto']
+        })}
+      />
+    ),
+    h3: (props: any) => (
+      <Typography {...props} css={mq({ marginLeft: [10, 0] })} variant="h5" />
+    ),
+    a: (props: any) => (
+      <Button
+        {...props}
+        variant="outlined"
+        color="primary"
+        to={props.href}
+        component={Link}
+      />
+    )
+  }
+}).Compiler;
 
 export const query = graphql`
   query PostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-      }
+      htmlAst
     }
   }
 `;
 
-export default withStyles(styles)(PlainLayout);
+export default ({ data, classes }) => (
+  <Layout>
+    <Main>{renderAst(data.markdownRemark.htmlAst)}</Main>
+  </Layout>
+);
