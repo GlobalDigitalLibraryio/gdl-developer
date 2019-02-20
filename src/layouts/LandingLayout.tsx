@@ -17,6 +17,10 @@ const Cover = styled.div`
   color: white;
   background-image: linear-gradient(#015b7c, #014269);
   ${mq({ padding: ['30px', '50px 120px'] })}
+
+  p {
+    color: white;
+  }
 `;
 
 const Section = styled.div<{ invert: string }>`
@@ -31,7 +35,7 @@ const Section = styled.div<{ invert: string }>`
   ${p =>
     mq({
       padding: ['30px', '50px 120px'],
-      gridGap: ['1em', '3em'],
+      gridGap: ['1em', '1em 3em'],
       gridTemplateAreas: [
         `
     'header'
@@ -63,6 +67,10 @@ const Grid = withWidth()(styled.div`
     isWidthUp('md', p.width)
       ? 'grid-template-columns: 1fr 1fr'
       : 'grid-template-rows: 1fr 1fr'};
+
+  p {
+    ${mq({ margin: ['10px 0', 15] })}
+  }
 `);
 
 const GridItem = styled.div<{ divider: string }>`
@@ -133,7 +141,9 @@ const Paragraph = (props: any) => {
       return <p {...props} />;
     }
   } else {
-    return <p {...props} />;
+    return (
+      <Typography {...props} style={{ lineHeight: 1.7, fontSize: '1rem' }} />
+    );
   }
 };
 
@@ -141,7 +151,11 @@ const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
     h1: (props: any) => (
-      <Typography {...props} variant="h4" style={{ color: 'white' }} />
+      <Typography
+        {...props}
+        variant="h4"
+        style={{ color: 'white', marginBottom: 15 }}
+      />
     ),
     h2: (props: any) => (
       <Typography
@@ -149,15 +163,16 @@ const renderAst = new rehypeReact({
         variant="h5"
         css={mq({
           gridArea: 'header',
+          fontSize: '1.7rem',
           marginLeft: ['auto', 'inherit'],
-          marginRight: ['auto', 'inherit']
+          marginRight: ['auto', 'inherit'],
+          marginTop: ['inherit', 'auto']
         })}
       />
     ),
     h3: (props: any) => (
       <Typography {...props} css={mq({ marginLeft: [10, 0] })} variant="h5" />
     ),
-    h4: (props: any) => <Typography {...props} />,
     a: (props: any) => (
       <Button
         {...props}
