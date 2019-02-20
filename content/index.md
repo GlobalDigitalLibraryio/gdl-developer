@@ -2,9 +2,9 @@
 
 # About GDL development
 
-The developer portal is an essential part of the GDL project. Our goal is to enable developer communities, designers and content providers to reuse software, content and design elements from the GDL in new projects.
-
+The developer portal is an essential part of the GDL project. Our goal is to enable developer communities, designers and content providers to reuse software, content and design elements from the GDL in new projects.\
 By taking this open approach to digital development, we hope to help increase collaboration in the digital development community and avoid duplication of work.
+
 </cover>
 
 <section>
@@ -30,7 +30,6 @@ By taking this open approach to digital development, we hope to help increase co
 ![feed image](/images/philly.png)
 
 </section>
-
 <section>
 
 ## Content
@@ -45,30 +44,32 @@ By taking this open approach to digital development, we hope to help increase co
 
 <grid>
 <griditem divider="yes">
+<gridheader>
 
 ![alt text](/images/github.svg)
 
 ### Github
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+</gridheader>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 [Example](/example)
 
 </griditem>
 <griditem>
 
+<gridheader>
+
 ![alt text](/images/librarybooks.svg)
 
 ### Libraries
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+</gridheader>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
 [Example](/example)
 
-<<<<<<< HEAD
-[Feeds](/feeds)
-=======
 </griditem>
 </grid>
-
-> > > > > > > wip: svg too big

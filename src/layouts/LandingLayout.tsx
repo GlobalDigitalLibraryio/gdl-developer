@@ -4,11 +4,9 @@ import rehypeReact from 'rehype-react';
 import { Typography, Button } from '@material-ui/core';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import styled from '@emotion/styled';
-import facepaint from 'facepaint';
-
-const mq = facepaint([`@media(min-width: 960px)`]);
 
 import Layout from './Layout';
+import { mq, misc } from '../styles';
 
 const Cover = styled.div`
   display: flex;
@@ -18,40 +16,41 @@ const Cover = styled.div`
   width: 100%;
   color: white;
   background-image: linear-gradient(#015b7c, #014269);
-  ${p => mq({ padding: ['30px', '50px 120px'] })}
+  ${mq({ padding: ['30px', '50px 120px'] })}
 `;
 
-const Section = styled.div`
+const Section = styled.div<{ invert: string }>`
   display: grid;
+  min-height: 380px;
+  width: 100%;
+  background-color: ${p => (p.invert ? '#FAFAFA' : 'white')};
+
+  ${p =>
+    p.invert &&
+    'background-image: radial-gradient(#ffffff 50%, rgba(209, 209, 209, 0.3));'}
   ${p =>
     mq({
       padding: ['30px', '50px 120px'],
       gridGap: ['1em', '3em'],
       gridTemplateAreas: [
         `
-  'header'
-  'image'
-  'content'
-  'button'`,
+    'header'
+    'image'
+    'content'
+    'button'`,
         p.invert
           ? `
-  'header image'
-  'content image'
-  'button image'
-  `
+    'header image'
+    'content image'
+    'button image'
+    `
           : `
-'image header'
-'image content'
-'image button'
-`
+  'image header'
+  'image content'
+  'image button'
+  `
       ]
     })};
-  min-height: 380px;
-  width: 100%;
-  ${props =>
-    props.invert &&
-    'background-image: radial-gradient(#ffffff, rgba(209, 209, 209, 0.2));'}
-  background-color: ${props => (props.invert ? '#FAFAFA' : 'white')};
 `;
 
 const Grid = withWidth()(styled.div`
@@ -59,13 +58,14 @@ const Grid = withWidth()(styled.div`
   align-content: center;
   min-height: 380px;
   background-color: #fafafa;
-  ${props =>
-    isWidthUp('md', props.width)
+  background-image: radial-gradient(#ffffff 50%, rgba(209, 209, 209, 0.3));
+  ${p =>
+    isWidthUp('md', p.width)
       ? 'grid-template-columns: 1fr 1fr'
       : 'grid-template-rows: 1fr 1fr'};
 `);
 
-const GridItem = styled.div`
+const GridItem = styled.div<{ divider: string }>`
   display: flex;
   ${p =>
     mq({
@@ -77,15 +77,22 @@ const GridItem = styled.div`
   justify-content: center;
   height: fit-content;
   p {
-    ${p => mq({ textAlign: ['start', 'center'] })};
+    ${mq({ textAlign: ['start', 'center'] })};
   }
+`;
+
+const GridHeader = styled.div`
+  display: flex;
+  ${mq({ flexDirection: ['row', 'column'] })};
+  justify-content: center;
+  align-items: center;
 `;
 
 const Main = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1060px;
+  max-width: ${misc.containers.large}px;
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
@@ -94,7 +101,7 @@ const Main = styled.main`
   box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
 `;
 
-const Paragraph = props => {
+const Paragraph = (props: any) => {
   if (props.children.length === 1 && typeof props.children[0] === 'object') {
     const firstChild = props.children[0];
     if (!!firstChild.props.src) {
@@ -133,10 +140,10 @@ const Paragraph = props => {
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
-    h1: props => (
+    h1: (props: any) => (
       <Typography {...props} variant="h4" style={{ color: 'white' }} />
     ),
-    h2: props => (
+    h2: (props: any) => (
       <Typography
         {...props}
         variant="h5"
@@ -147,11 +154,10 @@ const renderAst = new rehypeReact({
         })}
       />
     ),
-    h3: props => <Typography {...props} variant="h5" />,
-    h4: props => <Typography {...props} />,
-    cover: Cover,
-    section: Section,
-    p: Paragraph,
+    h3: (props: any) => (
+      <Typography {...props} css={mq({ marginLeft: [10, 0] })} variant="h5" />
+    ),
+    h4: (props: any) => <Typography {...props} />,
     a: (props: any) => (
       <Button
         {...props}
@@ -162,16 +168,14 @@ const renderAst = new rehypeReact({
       />
     ),
 
+    p: Paragraph,
+    cover: Cover,
+    section: Section,
     grid: Grid,
-    griditem: GridItem
+    griditem: GridItem,
+    gridheader: GridHeader
   }
 }).Compiler;
-
-const LandingLayout = ({ data }) => (
-  <Layout>
-    <Main>{renderAst(data.markdownRemark.htmlAst)}</Main>
-  </Layout>
-);
 
 export const query = graphql`
   query LandingQuery($slug: String!) {
@@ -181,4 +185,12 @@ export const query = graphql`
   }
 `;
 
-export default LandingLayout;
+export default ({
+  data
+}: {
+  data: { markdownRemark: { htmlAst: string } };
+}) => (
+  <Layout>
+    <Main>{renderAst(data.markdownRemark.htmlAst)}</Main>
+  </Layout>
+);
