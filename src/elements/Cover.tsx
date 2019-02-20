@@ -9,7 +9,7 @@ const Cover = styled.div`
   width: 100%;
   color: white;
   background-image: linear-gradient(#015b7c, #014269);
-  ${mq({ padding: ['30px', '50px 120px'] })}
+  ${mq({ padding: ['70px 30px', '50px 120px'] })}
 
   p {
     color: white;
