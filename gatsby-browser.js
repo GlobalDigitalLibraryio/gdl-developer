@@ -6,7 +6,7 @@ import { CssBaseline } from '@material-ui/core';
 import { create } from 'jss';
 import '!raw-loader!normalize.css';
 import './src/styles/styles.css';
-import 'prismjs/themes/prism.css';
+import 'prismjs/themes/prism-okaidia.css';
 
 const jss = create({
   ...jssPreset(),

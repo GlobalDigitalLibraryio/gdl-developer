@@ -7,7 +7,6 @@ import {
 } from '@material-ui/core/styles';
 
 const isBrowser = typeof window !== 'undefined';
-
 // Create a theme with Gatsby brand colors. You can choose your own
 const theme = createMuiTheme({
   typography: {
