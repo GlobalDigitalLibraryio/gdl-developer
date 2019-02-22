@@ -1,13 +1,14 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Layout from './Layout';
 import { Button, Typography } from '@material-ui/core';
 import rehypeReact from 'rehype-react';
-
 import styled from '@emotion/styled';
+import { css } from '@emotion/core';
+
+import Layout from './Layout';
 import { mq } from '../styles';
 import { Main } from '../elements';
-import { css } from '@emotion/core';
+import { Data } from '../types';
 
 const styles = {
   h1: css`
@@ -16,6 +17,7 @@ const styles = {
     margin-bottom: 20px;
   `,
   h2: css`
+    margin-top: 30px;
     font-size: 1.7rem;
     font-weight: 600;
   `,
@@ -23,19 +25,18 @@ const styles = {
     line-height: 1.7;
     font-size: 1rem;
   `,
-
-  content: mq({
-    padding: ['70px 30px', '50px 120px']
-  }),
   section: mq({
     backgroundColor: 'white',
     position: 'relative',
     overflow: 'hidden',
     padding: ['70px 30px', '80px 120px']
+  }),
+  content: mq({
+    padding: ['70px 30px', '50px 120px']
   })
 };
 
-const ImageWrapper = styled.p`
+const ImageWrapper = styled.div`
   position: absolute;
   bottom: -80px;
   ${mq({ right: [0, '70px'] })};
@@ -45,20 +46,10 @@ const ImageWrapper = styled.p`
   }
 `;
 
-const Paragraph = (props: any) => {
-  if (props.children.length === 1 && typeof props.children[0] === 'object') {
-    const firstChild = props.children[0];
-    if (firstChild.props.className === 'gatsby-resp-image-wrapper') {
-      return <ImageWrapper {...props} />;
-    }
-  }
-  return <Typography {...props} css={styles.body1} />;
-};
-
 const Div = (props: any) => {
   if (props.children.length === 1 && typeof props.children[0] === 'object') {
     if (props.className === 'gatsby-highlight') {
-      return <div {...props} css={mq({ width: ['auto', 'inherit'] })} />;
+      return <div {...props} style={{ width: 'auto' }} />;
     }
   }
   return <div {...props} style={{ width: '100vw' }} />;
@@ -67,28 +58,29 @@ const Div = (props: any) => {
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
-    h1: (props: any) => <Typography {...props} variant="h3" css={styles.h1} />,
-    h2: (props: any) => <Typography {...props} variant="h5" css={styles.h2} />,
-    h3: (props: any) => <Typography {...props} variant="h5" />,
-    code: (props: any) => (
-      <code {...props} style={{ whiteSpace: 'pre-wrap', width: '100vw' }} />
+    h1: (p: any) => <Typography {...p} variant="h3" css={styles.h1} />,
+    h2: (p: any) => <Typography {...p} variant="h5" css={styles.h2} />,
+    h3: (p: any) => <Typography {...p} variant="h5" />,
+    p: (p: any) => <Typography {...p} css={styles.body1} />,
+    code: (p: any) => (
+      <code {...p} style={{ whiteSpace: 'pre-wrap', width: '100vw' }} />
     ),
 
-    button: props => (
+    button: (p: any) => (
       <Button
-        {...props}
+        {...p}
         variant="outlined"
         color="primary"
         component={Link}
         style={{ marginTop: 20, gridArea: 'button' }}
       >
-        {props.title}
+        {p.title}
       </Button>
     ),
-    div: Div,
-    section: props => <section {...props} css={styles.section} />,
-    content: props => <div {...props} css={styles.content} />,
-    p: Paragraph
+    section: (p: any) => <section {...p} css={styles.section} />,
+    content: (p: any) => <div {...p} css={styles.content} />,
+    bottomwrapper: ImageWrapper,
+    div: Div
   }
 }).Compiler;
 
@@ -100,7 +92,7 @@ export const query = graphql`
   }
 `;
 
-export default ({ data }) => (
+export default ({ data }: { data: Data }) => (
   <Layout>
     <Main>{renderAst(data.markdownRemark.htmlAst)}</Main>
   </Layout>

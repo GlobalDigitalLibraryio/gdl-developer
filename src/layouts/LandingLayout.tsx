@@ -8,6 +8,8 @@ import Layout from './Layout';
 import { mq } from '../styles';
 import { css } from '@emotion/core';
 
+import { Data } from '../types';
+
 const styles = {
   h1: css`
     color: white;
@@ -61,7 +63,7 @@ const renderAst = new rehypeReact({
     h1: (props: any) => <Typography {...props} css={styles.h1} variant="h4" />,
     h2: (props: any) => <Typography {...props} css={styles.h2} variant="h5" />,
     h3: (props: any) => <Typography {...props} css={styles.h3} variant="h5" />,
-    button: props => (
+    button: (props: any) => (
       <Button
         {...props}
         variant="outlined"
@@ -88,11 +90,7 @@ export const query = graphql`
   }
 `;
 
-export default ({
-  data
-}: {
-  data: { markdownRemark: { htmlAst: string } };
-}) => (
+export default ({ data }: { data: Data }) => (
   <Layout>
     <Main>{renderAst(data.markdownRemark.htmlAst)}</Main>
   </Layout>
