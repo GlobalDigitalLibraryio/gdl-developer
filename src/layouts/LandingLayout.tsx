@@ -68,7 +68,7 @@ const renderAst = new rehypeReact({
         {...props}
         variant="outlined"
         color="primary"
-        component={Link}
+        component={props.to ? Link : 'button'}
         css={styles.button}
       />
     ),
