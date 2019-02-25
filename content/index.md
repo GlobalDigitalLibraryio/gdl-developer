@@ -55,7 +55,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-<button to="/example">Example</button>
+<button href="https://github.com/GlobalDigitalLibraryio">Example</button>
 
 </griditem>
 <griditem>
