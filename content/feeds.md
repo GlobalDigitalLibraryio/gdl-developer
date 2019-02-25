@@ -1,35 +1,51 @@
----
-title: 'The Global Digital Library OPDS-feed'
----
+<section>
+
+# The GDL Opds-feed
 
 The Open Publication Distribution System (OPDS) Catalog specification is a syndication format for electronic publications based on Atom (RFC4287) and HTTP (RFC2616). OPDS Catalogs enable the aggregation, distribution, and discovery of books, journals, and other digital content by any user, from any source, in any electronic format, on any device. The OPDS Catalogs specification is based on the Atom syndication format and prioritizes simplicity and speed.
 
 The Global Digital Library has made an OPDS-feed available at the url [https://opds.digitallibrary.io/v1/root.xml](https://opds.digitallibrary.io/v1/root.xml). This can be used in existing ebook-readers that support OPDS, like Aldiko or FBReader. The GDL Android app also uses this feed.
 
+<bottomimagewrapper>
+
+![feed image](/images/philly.png)
+
+</bottomimagewrapper>
+
+</section>
+
+<content>
+
 ## Structure of GDL OPDS-feed
+
 The root.xml is the home of the OPDS-feed, and consists of two main sections:
 
-* Facet-section
-* Entry-section
+- **Facet-section**
+- **Entry-section**
 
 The entries listed in the root of the opds feed will default to newly arrived English titles.
 
 ## Facets
+
 Facets were introduced in version 1.1 of the OPDS specification and is a common way to navigate an opds-feed. By navigating via the the facet-links in the root-feed, one can select other languages.
 
 For each language available in the GDL, there will be a facet-link like the following:
+
 ```xml
 <link rel=”http://opds-spec.org/facet” href=”https://opds.digitallibrary.io/v1/am/root.xml” title=”አማርኛ” opds:facetGroup=”Languages” opds:activeFacet=”false”/>
 ```
+
 This links to books in the Amharic language.
 
 For each language, facets with the available top-level categories will be listed:
+
 ```xml
 <link rel=”http://opds-spec.org/facet” href=”https://opds.digitallibrary.io/v1/am/category/library_books/root.xml” title=”የቤተ መጻሕፍቱ መጽሐፍት” opds:facetGroup=”Category” opds:activeFacet=”false”/>
 <link rel=”http://opds-spec.org/facet” href=”https://opds.digitallibrary.io/v1/am/category/classroom_books/root.xml” title=”የክፍል መጽሐፍት” opds:facetGroup=”Category” opds:activeFacet=”false”/>
 ```
 
 For each of the top-level categories, a list of reading-levels will be listed:
+
 ```xml
 <link rel=”http://opds-spec.org/facet” href=”https://opds.digitallibrary.io/v1/am/category/library_books/level/1.xml” title=”ደረጃ 1″ opds:facetGroup=”Selection” opds:activeFacet=”false”/>
 <link rel=”http://opds-spec.org/facet” href=”https://opds.digitallibrary.io/v1/am/category/library_books/level/2.xml” title=”ደረጃ 2″ opds:facetGroup=”Selection” opds:activeFacet=”false”/>
@@ -38,9 +54,11 @@ For each of the top-level categories, a list of reading-levels will be listed:
 <link rel=”http://opds-spec.org/facet” href=”https://opds.digitallibrary.io/v1/am/category/library_books/level/read-aloud.xml” title=”ጮክ ብለህ አንብብ” opds:facetGroup=”Selection” opds:activeFacet=”false”/>
 <link rel=”http://opds-spec.org/facet” href=”https://opds.digitallibrary.io/v1/am/category/library_books/root.xml” title=”New arrivals” opds:facetGroup=”Selection” opds:activeFacet=”true”/>
 ```
+
 By following any of the links in the facet, the listed books will be filtered according to the selected facet.
 
 ## Entries
+
 Each book in the listing will have a similar entry like the following:
 
 ```xml
@@ -73,4 +91,6 @@ The metadata associated with each title follows the standard atom and opds struc
 In addition to the standard fields, the GDL-feed also uses the `lrmi:educationalAlignment`.
 This indicates the reading level for the current book.
 
-[Home](/)
+<button to="/" title="Home"/>
+
+</content>
