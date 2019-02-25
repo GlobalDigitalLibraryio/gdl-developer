@@ -23,11 +23,11 @@ Here you can write description
 
 It is optional to add a semi-transparent image like this:
 
-<bottomwrapper>
+<bottomimagewrapper>
 
 ![feed image](/images/philly.png)
 
-</bottomwrapper>
+</bottomimagewrapper>
 
 (yes, it is positioned on the bottom right)
 

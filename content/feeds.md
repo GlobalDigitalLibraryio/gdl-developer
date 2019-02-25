@@ -6,11 +6,11 @@ The Open Publication Distribution System (OPDS) Catalog specification is a syndi
 
 The Global Digital Library has made an OPDS-feed available at the url [https://opds.digitallibrary.io/v1/root.xml](https://opds.digitallibrary.io/v1/root.xml). This can be used in existing ebook-readers that support OPDS, like Aldiko or FBReader. The GDL Android app also uses this feed.
 
-<bottomwrapper>
+<bottomimagewrapper>
 
 ![feed image](/images/philly.png)
 
-</bottomwrapper>
+</bottomimagewrapper>
 
 </section>
 

@@ -79,7 +79,7 @@ const renderAst = new rehypeReact({
     ),
     section: (p: any) => <section {...p} css={styles.section} />,
     content: (p: any) => <div {...p} css={styles.content} />,
-    bottomwrapper: ImageWrapper,
+    bottomimagewrapper: ImageWrapper,
     div: Div
   }
 }).Compiler;
