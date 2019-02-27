@@ -53,9 +53,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 </gridheader>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+All source code used to create the Global Digital Library is open source. You can reuse our code or even contribute to it.
 
-<button href="https://github.com/GlobalDigitalLibraryio">Example</button>
+<button href="https://github.com/GlobalDigitalLibraryio">GitHub</button>
 
 </griditem>
 <griditem>
