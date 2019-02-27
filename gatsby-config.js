@@ -7,6 +7,8 @@ const {
 
 console.log(`Using environment config: '${GDL_ENVIRONMENT}'`);
 
+const PRIMARY_COLOR = '#0277bd';
+
 module.exports = {
   siteMetadata: {
     title: 'Developer portal',
@@ -22,7 +24,7 @@ module.exports = {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         theme: {
-          primaryColor: '#0277bd'
+          primaryColor: PRIMARY_COLOR
         }
       }
     },
@@ -98,8 +100,8 @@ module.exports = {
         name: 'GDL developer portal',
         short_name: 'developer-portal',
         start_url: '/',
-        background_color: '#0277bd',
-        theme_color: '#0277bd',
+        background_color: PRIMARY_COLOR,
+        theme_color: PRIMARY_COLOR,
         display: 'minimal-ui',
         icon: 'src/assets/favicon.png' // This path is relative to the root of the site.
       }

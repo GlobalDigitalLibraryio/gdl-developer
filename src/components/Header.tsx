@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Hidden } from '@material-ui/core';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import gdlLogo from '../assets/GDL-logo.svg';
+import colors from '../styles/colors';
 
 const styles = {
   logo: css`
@@ -25,7 +26,7 @@ const styles = {
 };
 
 const Header = ({ siteTitle }: { siteTitle: String }) => (
-  <AppBar position="static">
+  <AppBar position="static" css={{ backgroundColor: colors.primary }}>
     <Toolbar>
       <Link to="/" css={styles.logo} aria-label="Global Digital Library">
         <img src={gdlLogo} aria-hidden alt="logo" />
