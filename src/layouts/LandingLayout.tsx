@@ -4,6 +4,7 @@ import rehypeReact from 'rehype-react';
 import { Typography, Button } from '@material-ui/core';
 
 import { Cover, Section, Main, Grid, GridItem, GridHeader } from '../elements';
+import SafeButton from '../components/SafeButton';
 import Layout from './Layout';
 import { mq } from '../styles';
 import { css } from '@emotion/core';
@@ -63,15 +64,7 @@ const renderAst = new rehypeReact({
     h1: (props: any) => <Typography {...props} css={styles.h1} variant="h4" />,
     h2: (props: any) => <Typography {...props} css={styles.h2} variant="h5" />,
     h3: (props: any) => <Typography {...props} css={styles.h3} variant="h5" />,
-    button: (props: any) => (
-      <Button
-        {...props}
-        variant="outlined"
-        color="primary"
-        component={props.to ? Link : 'button'}
-        css={styles.button}
-      />
-    ),
+    button: (props: any) => <SafeButton {...props} css={styles.button} />,
 
     p: Paragraph,
     cover: Cover,
