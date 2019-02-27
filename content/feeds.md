@@ -1,3 +1,7 @@
+---
+title: 'Feeds'
+---
+
 <section>
 
 # The GDL Opds-feed

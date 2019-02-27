@@ -1,3 +1,7 @@
+---
+title: 'README'
+---
+
 <content>
 
 # README
@@ -9,6 +13,20 @@ You can either follow this file or read it on the [developer portal](https://dev
 Primarly you can use normal markdown syntax. Here is a cheatsheet you can follow: [cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 Since we have a design we want to preserve, there are some details that you need to follow.
+
+## Title
+
+Do set the title in the navigation bar and browser tab, you need to set this at the top of the file:
+
+```
+---
+title: 'Your title'
+---
+
+...
+```
+
+This is optional. If it is not set, it will default to `title='Developer portal`
 
 ## Section
 
@@ -56,12 +74,21 @@ NB! Again, it is required to have the new line after the `<content>` tag and bef
 
 Creating a button uses the same syntax as creating a [link with markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links). Therefore, to distinguish between a url link and a button it is required to create a button tag like this:
 
+For buttons linking site to our domain use the `to` prop:
+
 ```xml
 <button to="/example">Example</button>
 
 <button to="/">Home</button>
 
-<button to="https://www.google.com">To Google</button>
+```
+
+If you want to link to an external website, you need to use the `href` prop:
+
+```xml
+<button href="https://github.com/GlobalDigitalLibraryio">GitHub</button>
+
+<button href="https://www.google.com">To Google</button>
 ```
 
 </content>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Typography } from '@material-ui/core';
 import rehypeReact from 'rehype-react';
 import styled from '@emotion/styled';
@@ -86,12 +86,15 @@ export const query = graphql`
   query PostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
+      frontmatter {
+        title
+      }
     }
   }
 `;
 
 export default ({ data }: { data: Data }) => (
-  <Layout>
+  <Layout title={data.markdownRemark.frontmatter.title}>
     <Main>{renderAst(data.markdownRemark.htmlAst)}</Main>
   </Layout>
 );
