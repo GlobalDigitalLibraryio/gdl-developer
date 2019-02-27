@@ -1,11 +1,12 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { Button, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import rehypeReact from 'rehype-react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
 import Layout from './Layout';
+import SafeButton from '../components/SafeButton';
 import { mq } from '../styles';
 import { Main } from '../elements';
 import { Data } from '../types';
@@ -33,7 +34,11 @@ const styles = {
   }),
   content: mq({
     padding: ['70px 30px', '50px 120px']
-  })
+  }),
+  button: {
+    marginTop: 20,
+    gridArea: 'button'
+  }
 };
 
 const ImageWrapper = styled.div`
@@ -65,17 +70,10 @@ const renderAst = new rehypeReact({
     code: (p: any) => (
       <code {...p} style={{ whiteSpace: 'pre-wrap', width: '100vw' }} />
     ),
-
     button: (p: any) => (
-      <Button
-        {...p}
-        variant="outlined"
-        color="primary"
-        component={Link}
-        style={{ marginTop: 20, gridArea: 'button' }}
-      >
+      <SafeButton {...p} css={styles.button}>
         {p.title}
-      </Button>
+      </SafeButton>
     ),
     section: (p: any) => <section {...p} css={styles.section} />,
     content: (p: any) => <div {...p} css={styles.content} />,
