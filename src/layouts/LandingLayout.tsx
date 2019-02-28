@@ -1,7 +1,7 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import rehypeReact from 'rehype-react';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 import { Cover, Section, Main, Grid, GridItem, GridHeader } from '../elements';
 import SafeButton from '../components/SafeButton';
@@ -79,12 +79,15 @@ export const query = graphql`
   query LandingQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
+      frontmatter {
+        title
+      }
     }
   }
 `;
 
 export default ({ data }: { data: Data }) => (
-  <Layout>
+  <Layout title={data.markdownRemark.frontmatter.title}>
     <Main>{renderAst(data.markdownRemark.htmlAst)}</Main>
   </Layout>
 );
