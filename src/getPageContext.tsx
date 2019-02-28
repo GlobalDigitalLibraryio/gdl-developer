@@ -5,6 +5,7 @@ import {
   createMuiTheme,
   createGenerateClassName
 } from '@material-ui/core/styles';
+import colors from './styles/colors';
 
 const isBrowser = typeof window !== 'undefined';
 // Create a theme with Gatsby brand colors. You can choose your own
@@ -15,10 +16,10 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#0277bd'
+      main: colors.primary
     },
     secondary: {
-      main: '#ffb238'
+      main: colors.secondary
     }
   },
   overrides: {
@@ -30,9 +31,9 @@ const theme = createMuiTheme({
       },
       outlinedPrimary: {
         fontWeight: 'bold',
-        border: `1.7px solid #0277bd`,
+        border: `1.7px solid ${colors.primary}`,
         '&:hover': {
-          border: `1.7px solid #0277bd`
+          border: `1.7px solid ${colors.primary}`
         }
       }
     }
