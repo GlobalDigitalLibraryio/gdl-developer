@@ -70,11 +70,7 @@ const renderAst = new rehypeReact({
     code: (p: any) => (
       <code {...p} style={{ whiteSpace: 'pre-wrap', width: '100vw' }} />
     ),
-    button: (p: any) => (
-      <SafeButton {...p} css={styles.button}>
-        {p.title}
-      </SafeButton>
-    ),
+    button: (p: any) => <SafeButton {...p} css={styles.button} />,
     section: (p: any) => <section {...p} css={styles.section} />,
     content: (p: any) => <div {...p} css={styles.content} />,
     bottomimagewrapper: ImageWrapper,

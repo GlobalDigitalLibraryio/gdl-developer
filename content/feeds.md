@@ -91,6 +91,6 @@ The metadata associated with each title follows the standard atom and opds struc
 In addition to the standard fields, the GDL-feed also uses the `lrmi:educationalAlignment`.
 This indicates the reading level for the current book.
 
-<button to="/" title="Home"/>
+<button to="/">Home</button>
 
 </content>
