@@ -52,9 +52,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 </gridheader>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+The source code for the GDL platform is released under an open sources license and is available on GitHub.
 
-[Go to GDL on Github](/example)
+[Go to GDL on Github](https://github.com/GlobalDigitalLibraryio/)
 
 </griditem>
 <griditem>
