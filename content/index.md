@@ -59,7 +59,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 The source code for the GDL platform is released under an open sources license and is available on GitHub.
 
-[Go to GDL on Github](https://github.com/GlobalDigitalLibraryio/)
+<button href="https://github.com/GlobalDigitalLibraryio">GitHub</button>
 
 </griditem>
 <griditem>
