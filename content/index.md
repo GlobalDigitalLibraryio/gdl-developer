@@ -1,3 +1,7 @@
+---
+title: 'Developer portal'
+---
+
 <cover>
 
 # About GDL development
@@ -15,7 +19,7 @@ By taking this open approach to digital development, we hope to help increase co
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
 
-[Browse APIs](/browse)
+<button to="/browse">Browse APIs</button>
 
 </section>
 
@@ -25,9 +29,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 OPDS Catalogs enable the aggregation, distribution, and discovery of books, journals, and other digital content by any user, from any source, in any electronic format, on any device. The Open Publication Distribution System (OPDS) Catalog specification is a syndication format for electronic publications based on Atom (RFC4287) and HTTP (RFC2616).
 
-[Read more](/feeds)
-
 ![feed image](/images/philly.png)
+
+<button to="/feeds">Feeds</button>
 
 </section>
 <section>
@@ -38,12 +42,13 @@ OPDS Catalogs enable the aggregation, distribution, and discovery of books, jour
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
 
-[Example](/example)
+<button to="/example">Example</button>
 
 </section>
 
 <grid>
 <griditem divider="yes">
+
 <gridheader>
 
 ![alt text](/images/github.svg)
@@ -58,7 +63,6 @@ The source code for the GDL platform is released under an open sources license a
 
 </griditem>
 <griditem>
-
 <gridheader>
 
 ![alt text](/images/librarybooks.svg)
@@ -69,7 +73,6 @@ The source code for the GDL platform is released under an open sources license a
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-[Example](/example)
-
+<button to="/example">Example</button>
 </griditem>
 </grid>

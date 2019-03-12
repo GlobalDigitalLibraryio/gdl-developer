@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { mq } from '../styles';
 
-const Section = styled.div<{ invert: string }>`
+const Section = styled.section<{ invert: string }>`
   display: grid;
   min-height: 380px;
   width: 100%;

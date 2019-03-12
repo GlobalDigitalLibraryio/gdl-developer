@@ -1,67 +1,80 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
-import Layout from './Layout';
-import { Button, Typography } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
-import { Theme } from '@material-ui/core';
+import { graphql } from 'gatsby';
+import { Typography } from '@material-ui/core';
 import rehypeReact from 'rehype-react';
-
 import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
-import { mq, misc } from '../styles';
+import Layout from './Layout';
+import SafeButton from '../components/SafeButton';
+import { mq } from '../styles';
+import { Main } from '../elements';
+import { Data } from '../types';
 
-const Main = styled.main`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: ${misc.containers.large}px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100%;
-  flex: 1 0 auto;
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
+const styles = {
+  h1: css`
+    font-weight: 600;
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+  `,
+  h2: css`
+    margin-top: 30px;
+    font-size: 1.7rem;
+    font-weight: 600;
+  `,
+  body1: css`
+    line-height: 1.7;
+    font-size: 1rem;
+  `,
+  section: mq({
+    backgroundColor: 'white',
+    position: 'relative',
+    overflow: 'hidden',
+    padding: ['70px 30px', '80px 120px']
+  }),
+  content: mq({
+    padding: ['70px 30px', '50px 120px']
+  }),
+  button: {
+    marginTop: 20,
+    gridArea: 'button'
+  }
+};
 
-  div {
-    width: 100%;
+const ImageWrapper = styled.div`
+  position: absolute;
+  bottom: -80px;
+  ${mq({ right: [0, '70px'] })};
+  width: 300px;
+  span {
+    opacity: 0.3;
   }
 `;
+
+const Div = (props: any) => {
+  if (props.children.length === 1 && typeof props.children[0] === 'object') {
+    if (props.className === 'gatsby-highlight') {
+      return <div {...props} style={{ width: 'auto' }} />;
+    }
+  }
+  return <div {...props} style={{ width: '100vw' }} />;
+};
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
-    h1: (props: any) => (
-      <Typography
-        {...props}
-        variant="h4"
-        style={{ color: 'white', marginBottom: 15 }}
-      />
+    h1: (p: any) => <Typography {...p} variant="h3" css={styles.h1} />,
+    h2: (p: any) => <Typography {...p} variant="h5" css={styles.h2} />,
+    h3: (p: any) => <Typography {...p} variant="h5" />,
+    p: (p: any) => <Typography {...p} css={styles.body1} />,
+    code: (p: any) => (
+      <code {...p} style={{ whiteSpace: 'pre-wrap', width: '100vw' }} />
     ),
-    h2: (props: any) => (
-      <Typography
-        {...props}
-        variant="h5"
-        css={mq({
-          gridArea: 'header',
-          fontSize: '1.7rem',
-          marginLeft: ['auto', 'inherit'],
-          marginRight: ['auto', 'inherit'],
-          marginTop: ['inherit', 'auto']
-        })}
-      />
-    ),
-    h3: (props: any) => (
-      <Typography {...props} css={mq({ marginLeft: [10, 0] })} variant="h5" />
-    ),
-    a: (props: any) => (
-      <Button
-        {...props}
-        variant="outlined"
-        color="primary"
-        to={props.href}
-        component={Link}
-      />
-    )
+    button: (p: any) => <SafeButton {...p} css={styles.button} />,
+    section: (p: any) => <section {...p} css={styles.section} />,
+    content: (p: any) => <div {...p} css={styles.content} />,
+    bottomimagewrapper: ImageWrapper,
+    div: Div
   }
 }).Compiler;
 
@@ -69,12 +82,15 @@ export const query = graphql`
   query PostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
+      frontmatter {
+        title
+      }
     }
   }
 `;
 
-export default ({ data, classes }) => (
-  <Layout>
+export default ({ data }: { data: Data }) => (
+  <Layout title={data.markdownRemark.frontmatter.title}>
     <Main>{renderAst(data.markdownRemark.htmlAst)}</Main>
   </Layout>
 );
