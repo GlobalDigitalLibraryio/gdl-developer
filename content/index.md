@@ -27,7 +27,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## Feeds
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+OPDS Catalogs enable the aggregation, distribution, and discovery of books, journals, and other digital content by any user, from any source, in any electronic format, on any device. The Open Publication Distribution System (OPDS) Catalog specification is a syndication format for electronic publications based on Atom (RFC4287) and HTTP (RFC2616).
 
 ![feed image](/images/philly.png)
 
@@ -57,7 +57,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 </gridheader>
 
-All source code used to create the Global Digital Library is open source. You can reuse our code or even contribute to it.
+The source code for the GDL platform is released under an open sources license and is available on GitHub.
 
 <button href="https://github.com/GlobalDigitalLibraryio">GitHub</button>
 
