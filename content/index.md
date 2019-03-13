@@ -40,9 +40,9 @@ OPDS Catalogs enable the aggregation, distribution, and discovery of books, jour
 
 ![content image](/images/panico.png)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+The GDL will collect existing high quality open educational reading resources, and make them available on the web, mobile and for print. If your organization is developing reading resources in your project you can contribute by committing your content to the GDL.
 
-<button to="/example">Example</button>
+<button to="/content">Learn more</button>
 
 </section>
 
