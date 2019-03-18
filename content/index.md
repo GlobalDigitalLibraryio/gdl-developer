@@ -4,7 +4,7 @@ title: 'Developer portal'
 
 <cover>
 
-# About GDL development
+# Enabling the GDL developer community  
 
 The developer portal is an essential part of the GDL project. Our goal is to enable developer communities, designers and content providers to reuse software, content and design elements from the GDL in new projects.\
 By taking this open approach to digital development, we hope to help increase collaboration in the digital development community and avoid duplication of work.
@@ -17,7 +17,7 @@ By taking this open approach to digital development, we hope to help increase co
 
 ## APIs
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+The GDL platform provides a set of APIs, allowing for individual programmers, projects and organizations to build new apps and service with content from the Global Digital Library. We currently provide APIs for pictures and books. Each API listing offers documentation on the usage of the API plus the specification of operations.
 
 <button to="/browse">Browse APIs</button>
 
@@ -27,7 +27,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## Feeds
 
-OPDS Catalogs enable the aggregation, distribution, and discovery of books, journals, and other digital content by any user, from any source, in any electronic format, on any device. The Open Publication Distribution System (OPDS) Catalog specification is a syndication format for electronic publications based on Atom (RFC4287) and HTTP (RFC2616).
+An OPDS catalogue enables the aggregation, distribution, and discovery of books, journals, and other digital content by any user, from any source, in an electronic format, on any device. The Open Publication Distribution System (OPDS) Catalog specification is a syndication format for electronic publications based on Atom (RFC4287) and HTTP (RFC2616). The GDL provides an OPDS catalogue with access to all books in all current languages.
 
 ![feed image](/images/philly.png)
 
