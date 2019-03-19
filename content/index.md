@@ -4,7 +4,7 @@ title: 'Developer portal'
 
 <cover>
 
-# Enabling the GDL developer community  
+# Enabling the GDL developer community
 
 The developer portal is an essential part of the GDL project. Our goal is to enable developer communities, designers and content providers to reuse software, content and design elements from the GDL in new projects.\
 By taking this open approach to digital development, we hope to help increase collaboration in the digital development community and avoid duplication of work.
@@ -42,7 +42,7 @@ An OPDS catalogue enables the aggregation, distribution, and discovery of books,
 
 The GDL will collect existing high quality open educational reading resources, and make them available on the web, mobile and for print. If your organization is developing reading resources in your project you can contribute by committing your content to the GDL.
 
-<button to="/content">Learn more</button>
+<button to="/contents">Learn more</button>
 
 </section>
 
