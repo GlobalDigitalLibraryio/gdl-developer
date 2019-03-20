@@ -8,7 +8,7 @@ const Cover = styled.div`
   min-height: 380px;
   width: 100%;
   color: white;
-  background-image: linear-gradient(#015b7c, #014269);
+  background-color: rgba(0, 95, 151, 0.9);
   ${mq({ padding: ['70px 30px', '50px 120px'] })}
 
   p {
