@@ -8,36 +8,41 @@
 import React from 'react';
 import { fluidRange } from 'polished';
 import { css } from '@emotion/core';
-import styled from '@emotion/styled';
+import { SerializedStyles } from '@emotion/css';
 
 import View from './View';
 import { misc } from '../styles';
 
+type Props = {
+  css: SerializedStyles;
+  gutter?: boolean;
+  size: keyof typeof misc.containers;
+  children: React.ReactNode;
+};
+
 /**
  * Center content horizontally
  */
-const StyledContainer = styled(View)<Props>`
-  margin-left: auto;
-  margin-right: auto;
-  max-width: ${p => `${misc.containers[p.size]}px`};
-`;
-
-type Props = {
-  css: any;
-  gutter?: boolean;
-  size: keyof typeof misc.containers;
+const Container = ({ gutter, size, ...props }: Props) => {
+  let guts;
+  if (gutter) {
+    guts = size === 'small' ? smallGutterStyle : largeGutterStyle;
+  }
+  return (
+    <View
+      css={[
+        guts,
+        css`
+          margin-left: auto;
+          margin-right: auto;
+          max-width: ${misc.containers[size]}px;
+        `
+      ]}
+      size={size}
+      {...props}
+    />
+  );
 };
-
-const Container = ({ gutter, size, ...props }: Props) => (
-  <StyledContainer
-    css={[
-      gutter === true && size === 'small' && smallGutterStyle,
-      gutter === true && size === 'large' && largeGutterStyle
-    ]}
-    size={size}
-    {...props}
-  />
-);
 
 Container.defaultProps = {
   size: 'small',

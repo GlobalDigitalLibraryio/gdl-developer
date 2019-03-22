@@ -10,7 +10,6 @@ import { mq } from '../styles';
 import { css } from '@emotion/core';
 
 import { Data } from '../types';
-import Footer from '../components/Footer/Footer';
 
 const styles = {
   h1: css`
@@ -90,6 +89,5 @@ export const query = graphql`
 export default ({ data }: { data: Data }) => (
   <Layout title={data.markdownRemark.frontmatter.title}>
     <Main>{renderAst(data.markdownRemark.htmlAst)}</Main>
-    <Footer />
   </Layout>
 );

@@ -8,11 +8,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import invariant from 'invariant';
-import mq from '../styles/mq';
+import { mq, misc } from '../styles';
+import { SerializedStyles } from '@emotion/css';
 
 type ResponsiveProp = string | [string, string];
 
 export type Props = {
+  css?: SerializedStyles;
+  size?: keyof typeof misc.containers;
   children?: React.ReactNode;
   className?: string;
   alignItems?: 'center' | 'stretch';
