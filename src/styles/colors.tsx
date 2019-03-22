@@ -1,6 +1,18 @@
 const colors = {
   primary: '#0277bd',
-  secondary: '#ffb238'
+  secondary: '#ffb238',
+  base: {
+    white: '#fff',
+    black: '#444',
+    gray: '#bbb',
+    grayDarkest: '#666',
+    grayLight: '#e3e3e3',
+    green: '#00ba6e'
+  },
+  text: {
+    default: '#444',
+    subtle: '#666'
+  }
 };
 
 export default colors;

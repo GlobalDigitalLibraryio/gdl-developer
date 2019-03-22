@@ -9532,6 +9532,13 @@ pngquant-bin@^5.0.0:
     execa "^0.10.0"
     logalot "^2.0.0"
 
+polished@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-3.0.4.tgz#a03050f31ecd654452d1c297d18d996a526b30c7"
+  integrity sha512-EVgEbMVX8arE9TgUyuoFYpc3dnxMs4uwySaz1NFuztTXCFm7Y4Xi5ZERQhWcPTykpXw7JgJlyXXiqnFpsnh2ng==
+  dependencies:
+    "@babel/runtime" "^7.3.1"
+
 popper.js@^1.14.1:
   version "1.14.7"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.7.tgz#e31ec06cfac6a97a53280c3e55e4e0c860e7738e"
