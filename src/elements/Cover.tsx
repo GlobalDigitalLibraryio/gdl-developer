@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { mq } from '../styles';
+import colors from '../styles/colors';
 
 const Cover = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ const Cover = styled.div`
   min-height: 380px;
   width: 100%;
   color: white;
-  background-color: rgba(0, 95, 151, 0.9);
+  background-color: ${colors.primary};
   ${mq({ padding: ['70px 30px', '50px 120px'] })}
 
   p {

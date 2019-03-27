@@ -7,7 +7,7 @@ const {
 
 console.log(`Using environment config: '${GDL_ENVIRONMENT}'`);
 
-const PRIMARY_COLOR = 'rgb(2, 97, 22, 0.77)';
+const PRIMARY_COLOR = '#00838C';
 
 module.exports = {
   siteMetadata: {
