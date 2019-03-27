@@ -12,7 +12,7 @@ The Global Digital Library has made an OPDS-feed available at the url [https://o
 
 <bottomimagewrapper>
 
-![feed image](/images/philly.png)
+![feed image](/images/billy.png)
 
 </bottomimagewrapper>
 
