@@ -29,7 +29,7 @@ The GDL platform provides a set of APIs, allowing for individual programmers, pr
 
 An OPDS catalogue enables the aggregation, distribution, and discovery of books, journals, and other digital content by any user, from any source, in an electronic format, on any device. The Open Publication Distribution System (OPDS) Catalog specification is a syndication format for electronic publications based on Atom (RFC4287) and HTTP (RFC2616). The GDL provides an OPDS catalogue with access to all books in all current languages.
 
-![feed image](/images/philly.png)
+![feed image](/images/billy.png)
 
 <button to="/feeds">Feeds</button>
 

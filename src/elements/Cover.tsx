@@ -9,7 +9,7 @@ const Cover = styled.div`
   min-height: 380px;
   width: 100%;
   color: white;
-  background-color: ${colors.primary};
+  background-color: ${colors.secondary};
   ${mq({ padding: ['70px 30px', '50px 120px'] })}
 
   p {
