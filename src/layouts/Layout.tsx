@@ -2,6 +2,7 @@ import React, { Fragment, ReactNode } from 'react';
 import Helmet from 'react-helmet';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const DEFAULT_TITLE = 'Developer portal';
 
@@ -24,6 +25,7 @@ const Layout = ({
     </Helmet>
     <Header siteTitle={title || DEFAULT_TITLE} />
     {children}
+    <Footer />
   </Fragment>
 );
 

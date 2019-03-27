@@ -15,7 +15,8 @@ module.exports = {
     bookApiDocs: apiDocs('book-api'),
     imageApiDocs: apiDocs('image-api'),
     oauthId: GDL_AUTH_CLIENT_ID,
-    oauthRedirectUrl: oauthRedirectUrl()
+    oauthRedirectUrl: oauthRedirectUrl(),
+    zendeskUrl: 'https://digitallibrary.zendesk.com/hc/en-us/requests/new'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
