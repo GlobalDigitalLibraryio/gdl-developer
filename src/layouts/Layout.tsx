@@ -8,10 +8,12 @@ const DEFAULT_TITLE = 'Developer portal';
 
 const Layout = ({
   children,
-  title
+  title,
+  contentFromAsafeer
 }: {
   children: ReactNode;
   title?: string;
+  contentFromAsafeer?: boolean;
 }) => (
   <Fragment>
     <Helmet
@@ -25,7 +27,7 @@ const Layout = ({
     </Helmet>
     <Header siteTitle={title || DEFAULT_TITLE} />
     {children}
-    <Footer />
+    <Footer contentFromAsafeer={contentFromAsafeer} />
   </Fragment>
 );
 
