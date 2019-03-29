@@ -14,6 +14,7 @@ module.exports = {
     title: 'Developer portal',
     bookApiDocs: apiDocs('book-api'),
     imageApiDocs: apiDocs('image-api'),
+    gameServiceDocs: apiDocs('game-service'),
     oauthId: GDL_AUTH_CLIENT_ID,
     oauthRedirectUrl: oauthRedirectUrl(),
     zendeskUrl: 'https://digitallibrary.zendesk.com/hc/en-us/requests/new'

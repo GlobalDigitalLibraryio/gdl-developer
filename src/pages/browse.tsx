@@ -22,6 +22,11 @@ const BrowsePage = () => (
               <Typography>image-api</Typography>
             </Link>
           </ListItem>
+          <ListItem>
+            <Link to="/game-service">
+              <Typography>game-service</Typography>
+            </Link>
+          </ListItem>
         </List>
       </Card>
     </Main>
