@@ -67,11 +67,11 @@ The source code for the GDL platform is released under an open sources license a
 
 ![alt text](/images/librarybooks.svg)
 
-### GDL design
+### Design
 
 </gridheader>
 
-The GDL is based on Material Design, an open sources adaptable system of guidelines, components, and tools that support the best practices of user interface design. We have released our Sketch design files on GitHub.
+The GDL is based on Material Design, an open sources adaptable system of guidelines, components, and tools that support the best practices of user interface design.
 
 <button to="/design">Learn more</button>
 </griditem>
