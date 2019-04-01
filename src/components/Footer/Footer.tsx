@@ -18,7 +18,7 @@ import CCLogo from './cc-logo.svg';
 import { colors } from '../../styles';
 import media from '../../styles/media';
 
-const Footer = () => (
+const Footer = ({ contentFromAsafeer }: { contentFromAsafeer?: boolean }) => (
   <StaticQuery
     query={graphql`
       query FooterQuery {
@@ -50,7 +50,29 @@ const Footer = () => (
               media.tablet({ display: 'none' })
             ]}
           />
-
+          {contentFromAsafeer && (
+            <CopyrightDescription>
+              The pictures used on this page are from the book{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="link"
+                href="https://digitallibrary.io/en/books/details/1349"
+              >
+                Grace in space
+              </a>{' '}
+              by Asafeer, licensed and used under{' '}
+              <a
+                aria-label="CC By-NC-SA license"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode"
+              >
+                CC BY-NC-SA
+              </a>{' '}
+              modified from the original.
+            </CopyrightDescription>
+          )}
           <LinkList>
             <div>
               <a href="https://home.digitallibrary.io/the-global-digital-library-uses-cookies/">
@@ -123,6 +145,20 @@ const Footer = () => (
     )}
   />
 );
+
+const CopyrightDescription = styled('div')`
+  order: 5;
+  color: ${colors.text.default};
+  font-size: 0.8rem;
+  width: 100%;
+  text-align: start;
+  ${media.tablet`
+    text-align: center;
+  `}
+  a {
+    color: ${colors.primary};
+  }
+`;
 
 const FooterStyle = styled('footer')`
   display: flex;
