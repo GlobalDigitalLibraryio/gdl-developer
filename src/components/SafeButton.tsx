@@ -8,7 +8,13 @@ import { Button } from '@material-ui/core';
  */
 const SafeButton = (props: any) =>
   props.to ? (
-    <Button {...props} variant="outlined" color="primary" component={Link} />
+    <Button
+      {...props}
+      variant="outlined"
+      color="primary"
+      component={Link}
+      style={{ marginRight: 10 }}
+    />
   ) : (
     <Button
       {...props}
@@ -16,6 +22,7 @@ const SafeButton = (props: any) =>
       rel="noopener noreferrer"
       variant="outlined"
       color="primary"
+      style={{ marinRight: 10 }}
     />
   );
 
