@@ -19,7 +19,7 @@ By taking this open approach to digital development, we hope to help increase co
 
 The GDL platform provides a set of APIs, allowing for individual programmers, projects and organizations to build new apps and service with content from the Global Digital Library. We currently provide APIs for pictures and books. Each API listing offers documentation on the usage of the API plus the specification of operations.
 
-<button to="/browse">Browse APIs</button>
+<button to="/apis">Browse APIs</button>
 
 </section>
 
