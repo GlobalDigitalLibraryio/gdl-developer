@@ -148,12 +148,12 @@ const Footer = ({ contentFromAsafeer }: { contentFromAsafeer?: boolean }) => (
 
 const CopyrightDescription = styled('div')`
   order: 5;
-  margin-left: none;
   color: ${colors.text.default};
   font-size: 0.8rem;
-  text-align: justify;
+  width: 100%;
+  text-align: start;
   ${media.tablet`
-    margin-left: 36px;
+    text-align: center;
   `}
   a {
     color: ${colors.primary};
