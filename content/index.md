@@ -6,7 +6,7 @@ title: 'Developer portal'
 
 # Enabling the GDL developer community
 
-The developer portal is an essential part of the GDL project. Our goal is to enable developer communities, designers and content providers to reuse software, content and design elements from the GDL in new projects.\
+The goal for our developer portal is to enable communities of developer, designers and content providers to reuse software, content and design elements from the GDL in new projects.\
 By taking this open approach to digital development, we hope to help increase collaboration in the digital development community and avoid duplication of work.
 
 </cover>
@@ -67,12 +67,12 @@ The source code for the GDL platform is released under an open sources license a
 
 ![alt text](/images/librarybooks.svg)
 
-### Libraries
+### Design
 
 </gridheader>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+The GDL is based on Material Design, an open sources adaptable system of guidelines, components, and tools that support the best practices of user interface design.
 
-<button to="/example">Example</button>
+<button to="/design">Learn more</button>
 </griditem>
 </grid>
