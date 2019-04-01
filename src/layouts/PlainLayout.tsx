@@ -10,6 +10,7 @@ import SafeButton from '../components/SafeButton';
 import { mq } from '../styles';
 import { Main } from '../elements';
 import { Data } from '../types';
+import BackButton from '../components/BackButton';
 
 const styles = {
   h1: css`
@@ -73,6 +74,7 @@ const renderAst = new rehypeReact({
     button: (p: any) => <SafeButton {...p} css={styles.button} />,
     section: (p: any) => <section {...p} css={styles.section} />,
     content: (p: any) => <div {...p} css={styles.content} />,
+    backbutton: BackButton,
     bottomimagewrapper: ImageWrapper,
     div: Div
   }

@@ -91,4 +91,18 @@ If you want to link to an external website, you need to use the `href` prop:
 <button href="https://www.google.com">To Google</button>
 ```
 
+If you want a back button like this
+
+![back button](/images/backbutton.png)
+
+you can use:
+
+```xml
+...
+
+<backbutton />
+
+...
+```
+
 </content>
