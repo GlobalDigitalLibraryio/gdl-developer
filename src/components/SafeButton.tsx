@@ -22,7 +22,7 @@ const SafeButton = (props: any) =>
       rel="noopener noreferrer"
       variant="outlined"
       color="primary"
-      style={{ marinRight: 10 }}
+      style={{ marginRight: 10 }}
     />
   );
 
