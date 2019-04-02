@@ -19,6 +19,7 @@ const styles = {
   `,
   h2: css`
     margin-top: 30px;
+    margin-bottom: 10px;
     font-size: 1.7rem;
     font-weight: 600;
   `,
