@@ -14,7 +14,7 @@ Our APIs generally respond with JSON.
 
 <bottomimagewrapper>
 
-![feed image](/images/billy.png)
+![api image](/images/rose.png)
 
 </bottomimagewrapper>
 
@@ -37,9 +37,8 @@ There are also endpoints for downloading both ePub- and PDF-versions of the book
 ## Game Service
 [Swagger](/game-service) &nbsp;&nbsp;&nbsp; [GitHub](https://github.com/GlobalDigitalLibraryio/game-service)
 
-API for finding and using books and the content in books from The Global Digital Library. The API provides endpoints for searching, browsing and finding books in languages supported by the GDL.
-There are also endpoints for downloading both ePub- and PDF-versions of the books. Endpoints that change data are protected and not available to the general public.
+API for finding metadata about games published on The Global Digital Library. The API provides endpoints for listing games and filtering games on language. Endpoints that change data are protected and not available to the general public.
 
-<button to="/">Home</button>
+<backbutton />
 
 </content>
