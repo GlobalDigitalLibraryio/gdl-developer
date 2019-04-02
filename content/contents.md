@@ -66,6 +66,6 @@ The Global Digital Library metadata is based on the [LRMI Specification Version 
 
 The updated version of the GDL common metadata, [file format and CC license.](https://docs.google.com/document/d/e/2PACX-1vREQ7fUXgSE7lGMl9OJkneddkWffO4sDnMG5Vn-IleK35fJSFqnC-6ulK1Ss3eoETCHeLn0wPvcxJOf/pub)
 
-<button to="/">Home</button>
+<backbutton />
 
 </content>

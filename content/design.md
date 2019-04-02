@@ -5,6 +5,7 @@ title: 'Design'
 <content>
 
 # GDL design
+
 The GDL is in many ways built with design, icons and code from other projects.
 
 Most of our design components are from [Material Design](https://material.io). Material Design is a design system – backed by open-source code – that helps teams build digital experiences.
@@ -19,6 +20,6 @@ The icons and resources from Material Design are released under the Apache Licen
 
 Soon we will release the GDL Sketch design files on GitHub.
 
-<button to="/">Home</button>
+<backbutton />
 
 <content>
