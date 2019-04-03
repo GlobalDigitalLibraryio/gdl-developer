@@ -68,7 +68,7 @@ const renderAst = new rehypeReact({
     h1: (p: any) => <Typography {...p} variant="h3" css={styles.h1} />,
     h2: (p: any) => <Typography {...p} variant="h5" css={styles.h2} />,
     h3: (p: any) => <Typography {...p} variant="h5" />,
-    p: (p: any) => <Typography {...p} css={styles.body1} />,
+    p: (p: any) => <Typography {...p} css={styles.body1} paragraph />,
     code: (p: any) => (
       <code {...p} style={{ whiteSpace: 'pre-wrap', width: '100vw' }} />
     ),
