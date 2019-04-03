@@ -1,7 +1,7 @@
 {
   "name": "gdl-developer",
   "description": "A developer portal for GDL",
-  "license": "GPL-3.0",
+  "license": "Apache-2.0",
   "author": "gdl@knowit.no",
   "scripts": {
     "dev": "gatsby develop",
