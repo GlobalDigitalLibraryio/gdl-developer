@@ -14,7 +14,7 @@ import { Data } from '../types';
 
 const styles = {
   h1: css`
-    color: black;
+    color: white;
     margin-bottom: 15px;
   `,
   h2: mq({

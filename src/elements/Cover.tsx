@@ -11,8 +11,8 @@ const Cover = styled.div`
   color: white;
   background-image: linear-gradient(
       to bottom,
-      rgba(198, 203, 209, 0.8),
-      rgba(198, 203, 209, 0.8)
+      rgba(0, 68, 61, 0.7),
+      rgba(0, 68, 61, 0.7)
     ),
     url(${cover});
   background-position: center;
@@ -21,7 +21,7 @@ const Cover = styled.div`
   ${mq({ padding: ['70px 30px', '50px 120px'] })}
 
   p {
-    color: black;
+    color: white;
   }
 `;
 
