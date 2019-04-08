@@ -2,12 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import rehypeReact from 'rehype-react';
 import { Typography } from '@material-ui/core';
+import { css } from '@emotion/core';
+import styled from '@emotion/styled';
 
 import { Cover, Section, Main, Grid, GridItem, GridHeader } from '../elements';
 import SafeButton from '../components/SafeButton';
 import Layout from './Layout';
 import { mq } from '../styles';
-import { css } from '@emotion/core';
 
 import { Data } from '../types';
 
