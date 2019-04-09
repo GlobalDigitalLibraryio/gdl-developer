@@ -64,7 +64,7 @@ If all GDL content is described in a consistent and uniform manner, our searches
 
 The Global Digital Library metadata is based on the [LRMI Specification Version 1.1.](http://lrmi.dublincore.net/) In furtherance of its goal of interoperating with other specifications, the LRMI project has been inspired by other projects with similar visions.
 
-The updated version of the GDL common metadata, [file format and CC license.](https://docs.google.com/document/d/e/2PACX-1vREQ7fUXgSE7lGMl9OJkneddkWffO4sDnMG5Vn-IleK35fJSFqnC-6ulK1Ss3eoETCHeLn0wPvcxJOf/pub)
+Detailed information about required metadata can be found here: [GDL Metadata](/metadata)
 
 <backbutton />
 
