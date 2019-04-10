@@ -88,7 +88,7 @@ export const query = graphql`
 `;
 
 export default ({ data }: { data: Data }) => (
-  <Layout title={data.markdownRemark.frontmatter.title} contentFromAsafeer>
+  <Layout title={data.markdownRemark.frontmatter.title}>
     <Main>{renderAst(data.markdownRemark.htmlAst)}</Main>
   </Layout>
 );
