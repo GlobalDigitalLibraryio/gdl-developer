@@ -89,12 +89,12 @@ Title, Link to epub, Reading Level
 ```
 
 ## Games
-The GDL can host information about games and how to install/play the games.
+The GDL platform includes a separate category for games in selected languages, including information about the games and how to install/play them.
 ### Metadata as CSV
 #### Required
 * __ID__: Unique ID. Preferably a Google Play Store-identifier or an UUID.
 * __Title__: Title of the game
-* __Description__: A description of the game and what it is about
+* __Description__: A description including topic and the learning objectives of the game
 * __Language__: A BCP47 compliant language tag ([RFC5646](https://tools.ietf.org/html/rfc5646))
 * __URL__: URL to where the game can be installed from or where the game can be launched.
 * __CoverImage__: Direct URL to an image (eg. JPG, PNG) which can serve as a cover image for the game.
