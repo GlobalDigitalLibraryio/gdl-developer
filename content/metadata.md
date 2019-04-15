@@ -5,12 +5,14 @@ title: 'Metadata'
 <content>
 
 # GDL Metadata 
+This page covers details about metadata for both books and games.
 
-## Metadata in ePub
+## Books
+### Metadata in ePub
 We prefer that epub files conform to the EPUB3 specification. Each chapter should be separated into an own html-file.
 This section describes the required and optional elements in the file content.opf
 
-### Required
+#### Required
 * __dc:title__ : Title of the book
 * __dc:description__: Description of the book
 * __dc:creator__: Name of author
@@ -20,10 +22,10 @@ This section describes the required and optional elements in the file content.op
 * __dc:publisher__: Name of the publisher of the document
 * __dc:rights__: The license speficied as an SPDX License identifier ([SPDX Licenses](https://spdx.org/licenses/))
 
-### Optional
+#### Optional
 * __dc:contributor__: One or more describing additional contributors to the epub. Should be refined using meta-refines.
 
-### Example of the metadata-section of a content.opf
+#### Example of the metadata-section of a content.opf
 ```xml
 <?xml version='1.0' encoding='utf-8'?>
 <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uuid_id">
@@ -58,14 +60,14 @@ An example of how to identify the cover image is as follows:
 </package>
 ```
 
-## Metadata as CSV
-### Required
+### Metadata as CSV
+#### Required
 * __ID__: Unique ID (same as used in content.opf)
 * __Title__: Title of book
 * __Link to epub__: Direct link to the actual file, that can be automatically downloaded
 * __Reading Level__: 1-4, read-aloud - Based on Pratham Books system for levelling (https://storyweaver.org.in/reading_levels)
 
-### Optional
+#### Optional
 * __isBasedOnUrl__: A resource that was used in the creation of this resource. This term can be repeated for multiple sources. (schema.org/URL)
 * __educationalAlignment__: An alignment to an established educational framework (schema.org/AlignmentObject)
 * __educationalUse__: The purpose of the work in the context of education. Eg.“assignment”, “group work” (schema.org/Text
@@ -79,12 +81,35 @@ An example of how to identify the cover image is as follows:
 * __accessibilityFeature__: Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. (WebSchemas wiki lists possible values). (schema.org/Text)
 * __accessibilityHazard__: A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. (WebSchemas wiki lists possible values). (schema.org/Text)
 
-Example of a metadata csv-file:
+#### Example:
 ```csv
 Title, Link to epub, Reading Level
 "676719b9-f5bb-4ce7-83ca-e221cbc53c67", "Bath time for Chunnu and Munnu", https://books.digitallibrary.io/epub/en/676719b9-f5bb-4ce7-83ca-e221cbc53c67.epub, 1
 "c418ac9f-fa75-4a72-9f3a-8ceacee850f2", "A Street or a Zoo?", https://books.digitallibrary.io/epub/en/c418ac9f-fa75-4a72-9f3a-8ceacee850f2.epub, 1
 ```
+
+## Games
+The GDL platform includes a separate category for games in selected languages, including information about the games and how to install/play them.
+### Metadata as CSV
+#### Required
+* __ID__: Unique ID. Preferably a Google Play Store-identifier or an UUID.
+* __Title__: Title of the game
+* __Description__: A description including topic and the learning objectives of the game
+* __Language__: A BCP47 compliant language tag ([RFC5646](https://tools.ietf.org/html/rfc5646))
+* __URL__: URL to where the game can be installed from or where the game can be launched.
+* __CoverImage__: Direct URL to an image (eg. JPG, PNG) which can serve as a cover image for the game.
+* __License__: The license speficied as an SPDX License identifier ([SPDX Licenses](https://spdx.org/licenses/))
+* __Publisher__: Name of the publisher of the game
+
+
+#### Example
+```csv
+ID,Title,Description,Language (BCP47),URL,Cover Image,License,Publisher
+com.eduapp4syria.feedthemonsterSwahili,"Mlishe Zimwi","Mlishe Zimwi Description",sw-ke,https://play.google.com/store/apps/details?id=com.eduapp4syria.feedthemonsterSwahili,"https://res.cloudinary.com/djylvyru4/ar_0.81,c_fill/f_auto,q_auto,dpr_auto,c_scale,w_auto/61bae4215764aea871fb3ee445d2863a.png",BSD-2-Clause,Curious Learning
+com.eduapp4syria.feedthemonsterHausa,"Ciyar da dodo","Ciyar da dodo Description",ha-ng,https://play.google.com/store/apps/details?id=com.eduapp4syria.feedthemonsterHausa,"https://res.cloudinary.com/djylvyru4/ar_0.81,c_fill/f_auto,q_auto,dpr_auto,c_scale,w_auto/61bae4215764aea871fb3ee445d2863a.png",BSD-2-Clause,Curious Learning
+
+```
+
 <backbutton />
 
 </content>
