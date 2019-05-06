@@ -34,6 +34,18 @@ const styles = {
     marginLeft: ['auto', 'inherit'],
     marginRight: ['auto', 'inherit']
   }),
+  coverButtonWrapper: mq({
+    color: 'white',
+    gridArea: 'button',
+    marginLeft: ['auto', 'auto'],
+    marginRight: ['auto', 'inherit']
+  }),
+  coverButton: mq({
+    marginTop: 20,
+    color: 'white',
+    border: '1.7px solid white'
+  }),
+
   imageWrapper: mq({
     gridArea: 'image',
     width: 180,
@@ -48,7 +60,13 @@ const Paragraph = (props: any) => {
     if (!!firstChild.props.src) {
       return <p {...props} style={{ gridArea: 'image' }} />;
     } else if (!!firstChild.props.to) {
-      return <p {...props} css={styles.button} />;
+      const isCover = firstChild.props.hasOwnProperty('invert');
+      return (
+        <p
+          {...props}
+          css={isCover ? styles.coverButtonWrapper : styles.button}
+        />
+      );
     } else if (firstChild.props.className === 'gatsby-resp-image-wrapper') {
       return <p {...props} css={styles.imageWrapper} />;
     } else {
@@ -65,7 +83,15 @@ const renderAst = new rehypeReact({
     h1: (props: any) => <Typography {...props} css={styles.h1} variant="h4" />,
     h2: (props: any) => <Typography {...props} css={styles.h2} variant="h5" />,
     h3: (props: any) => <Typography {...props} css={styles.h3} variant="h5" />,
-    button: (props: any) => <SafeButton {...props} css={styles.button} />,
+    button: (props: any) => {
+      const isCover = props.hasOwnProperty('invert');
+      return (
+        <SafeButton
+          {...props}
+          css={isCover ? styles.coverButton : styles.button}
+        />
+      );
+    },
 
     p: Paragraph,
     cover: Cover,
