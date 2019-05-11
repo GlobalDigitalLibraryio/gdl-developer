@@ -6,10 +6,11 @@ title: 'Developer portal'
 
 # Enabling the GDL developer community
 
-The goal for our developer portal is to enable communities of developer, designers and content providers to reuse software, content and design elements from the GDL in new projects.\
+The goal for our developer portal is to enable communities of developers, designers and content providers to reuse software, content and design elements from the GDL in new projects.
+
 By taking this open approach to digital development, we hope to help increase collaboration in the digital development community and avoid duplication of work.
 
-<button invert to="/example">More</button>
+<button invert to="/principles">Learn more</button>
 
 </cover>
 
