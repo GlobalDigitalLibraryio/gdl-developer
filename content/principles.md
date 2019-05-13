@@ -1,5 +1,5 @@
 ---
-title: 'Example'
+title: 'The GDL development principles'
 ---
 
 <content>
