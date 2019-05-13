@@ -31,7 +31,7 @@ Designing with the user includes focussing on Accessibility, developing the GDL 
 
 Addressing privacy and security in digital development involves careful consideration of which data are collected and how data are acquired, used, stored and shared.
 
-The GDL projects have taken measures to minimize the collection of information and to we protect confidential information and identities of individuals represented in data sets from unauthorized access and manipulation by third parties.
+The GDL projects have taken measures to minimize the collection of user data. We work to protect confidential information and identities of individuals represented in data sets from unauthorized access and manipulation by third parties.
 
 We are transparent about which data has been collected and used, minimizing the amount of personal identifiable and sensitive information collected.
 
