@@ -60,7 +60,7 @@ The GDL will collect existing high quality open educational reading resources, a
 
 </gridheader>
 
-The source code for the GDL platform is released under an open sources license and is available on GitHub.
+The source code for the GDL platform is released under an open source license and is available on GitHub.
 
 <button href="https://github.com/GlobalDigitalLibraryio">GitHub</button>
 
